@@ -1,3 +1,12 @@
+# BBWPC v3.1.1 2025-08-xx
+## Fixed
+* The new recently introduced score S_BBWP_GW weighing in in the calculation of 
+S_BBWP_TOT
+
+## Changed
+* Scores for S_BBWP_TOT are no longer affected by the groundwater recharge score.
+Total scores should be comparable again with those from V2.4.0
+
 # BBWPC v3.1.0 2025-08-04
 ## Added
 * BRP crop codes for 2025: 7137, 7138, 7135, 7134 [PL-40]
