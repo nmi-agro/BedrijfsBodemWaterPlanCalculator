@@ -211,7 +211,7 @@ test_that("M_DRAIN affect GWL class IIIb and IV but not others", {
                  M_GREEN = c(FALSE, FALSE),
                  B_LU_BRP = c(265, 2014)
   )
-  expect_false(drainT$farm$s_bbwp_tot == drainF$farm$s_bbwp_tot)
+  # expect_false(drainT$farm$s_bbwp_tot == drainF$farm$s_bbwp_tot) # as long as GW isn't included in the calculation of TOT, drainage will not affect the total score
   expect_false(drainT$farm$s_bbwp_gw == drainF$farm$s_bbwp_gw)
   expect_true(drainT$farm$s_bbwp_wb == drainF$farm$s_bbwp_wb)
   expect_true(drainT$farm$s_bbwp_ngw == drainF$farm$s_bbwp_ngw)

@@ -113,7 +113,7 @@ require(BBWPC)
       
       expect_equal(
         object = test$fields$s_bbwp_tot,
-        expected = c(66, 50, 26),
+        expected = c(70, 45, 28),
         tolerance = 0.01)
       
       expect_equal(
@@ -256,12 +256,12 @@ require(BBWPC)
     # run tests on format and output values
     expect_equal(
       object = test$fields$s_bbwp_tot,
-      expected = c(83, 50, 54),
+      expected = c(91, 45, 64),
       tolerance = 0.01)
     
     expect_equal(
       object = as.numeric(unlist(test$farm)),
-      expected = c(68, 86 ,63 ,67 ,72, 92, 75),
+      expected = c(70, 86 ,63 ,67 ,72, 92, 75),
       tolerance = 0.01)
   })
 
@@ -317,7 +317,7 @@ require(BBWPC)
     
     expect_equal(
       object = test$fields$s_bbwp_tot,
-      expected = c(66 , 50 , 26),
+      expected = c(70 , 45 , 28),
       tolerance = 0.01)
     
     expect_equal(
@@ -368,7 +368,7 @@ require(BBWPC)
   test_that("check bbwp with high PSW loss risk", {
     expect_equal(
       object = as.numeric(unlist(test$farm)),
-      expected = c(29 , 87, 8, 6, 32, 91, 90),
+      expected = c(24 , 87, 8, 6, 32, 91, 90),
       tolerance = 0.01)
   })
   
@@ -414,7 +414,7 @@ require(BBWPC)
   test_that("check bbwp with high nitrate leaching risk and no measures", {
     expect_equal(
       object = as.numeric(unlist(test$farm)),
-      expected = c(58, 27, 55, 49, 82, 88, 91),
+      expected = c(53, 27, 55, 49, 82, 88, 91),
       tolerance = 0.01)
   })
   
@@ -458,7 +458,7 @@ require(BBWPC)
   test_that("check bbwp with low regional targets", {
     expect_equal(
       object = as.numeric(unlist(test$farm)),
-      expected = c(57, 87, 49, 43, 32, 84, 90),
+      expected = c(53, 87, 49, 43, 32, 84, 90),
       tolerance = 0.01)
   })
   
