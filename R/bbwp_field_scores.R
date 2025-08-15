@@ -221,14 +221,16 @@ bbwp_field_scores <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOP
                       S_BBWP_NSW * wf(S_BBWP_NSW, type="score",penalty = penalty) + 
                       S_BBWP_PSW * wf(S_BBWP_PSW, type="score",penalty = penalty) + 
                       S_BBWP_NUE * wf(S_BBWP_NUE, type="score",penalty = penalty) + 
-                      S_BBWP_WB * wf(S_BBWP_WB, type="score",penalty = penalty) +
-                      S_BBWP_GW * wf(S_BBWP_GW, type="score",penalty = penalty)) /
+                      S_BBWP_WB * wf(S_BBWP_WB, type="score",penalty = penalty) #+
+                      # S_BBWP_GW * wf(S_BBWP_GW, type="score",penalty = penalty)
+                     ) /
         (wf(S_BBWP_NGW, type="score",penalty = penalty) + 
           wf(S_BBWP_NSW, type="score",penalty = penalty) +
           wf(S_BBWP_PSW, type="score",penalty = penalty) +  
           wf(S_BBWP_NUE, type="score",penalty = penalty) +
-          wf(S_BBWP_WB, type="score",penalty = penalty) +
-          wf(S_BBWP_GW, type="score",penalty = penalty))]
+          wf(S_BBWP_WB, type="score",penalty = penalty) #+
+          # wf(S_BBWP_GW, type="score",penalty = penalty)
+         )]
   
   # order the fields
   setorder(dt, id)
