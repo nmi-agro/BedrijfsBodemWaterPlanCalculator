@@ -2,6 +2,9 @@
 ## Fixed
 * effect_costs of some measures being too high (>2). All effect_costs are now between 0 and 2 with 0.5 intervals.
 
+## Changed
+* Column effect_costs in bbwp_measures is now of type numeric instead of integer.
+
 # BBWPC v3.1.0 2025-08-04
 ## Added
 * BRP crop codes for 2025: 7137, 7138, 7135, 7134 [PL-40]
