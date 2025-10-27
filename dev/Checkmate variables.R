@@ -7,7 +7,11 @@ library(pandex);library(data.table);library(stringr)
   bbwp_parms <- bbwp_parms[code %in% c("B_SOILTYPE_AGR","B_LU_BBWP","B_LU_BRP","B_GWL_CLASS","B_SC_WENR","B_HELP_WENR","B_SLOPE_DEGREE","B_AER_CBS",
                                        "A_CLAY_MI","A_SAND_MI","A_SILT_MI","A_SOM_LOI","A_N_RT","A_FE_OX","A_AL_OX","A_P_CC","A_P_AL",
                                        "A_P_WA", "A_P_SG","B_CT_PSW","B_CT_NSW","B_CT_PSW_MAX","B_CT_NSW_MAX","D_SA_W","D_RO_R", "B_AREA",
-                                       "S_BBWP_NGW", 'S_BBWP_NSW', 'S_BBWP_NUE', 'S_BBWP_PSW', 'S_BBWP_TOT', 'S_BBWP_WB', 'S_BBWP_GW')]
+                                       "S_BBWP_NGW", 'S_BBWP_NSW', 'S_BBWP_NUE', 'S_BBWP_PSW', 'S_BBWP_TOT', 'S_BBWP_WB', 'S_BBWP_GW',
+                                       'D_RISK_NGW', 'D_RISK_NSW', 'D_RISK_PSW', 'D_RISK_NUE', 'D_RISK_WB', 'D_RISK_GW',
+                                       'B_CT_PSW', 'B_CT_NSW', 
+                                       'D_OPI_NGW', 'D_OPI_NSW', 'D_OPI_PSW', 'D_OPI_NUE', 'D_OPI_WB', 'D_OPI_GW'
+                                       )]
   
   # Unpack options
   for(this.code in bbwp_parms[enum == TRUE, code]){

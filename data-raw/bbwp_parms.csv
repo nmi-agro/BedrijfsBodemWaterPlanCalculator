@@ -90,8 +90,21 @@ B_LU_BRP,Cultivation code according to BRP,-,B,LU,BRP,"",int,,,"NOTE: BRP codes 
 B_SC_WENR,Compaction risk,unitless,B,SC,WENR,"",int,,,"Based on compaction risk described by 'Akker, J.J.H. van den, F. de Vries, G.D. Vermeulen, M.J.D. Hack-ten Broeke en T. Schouten, 2012. Risico op ondergrondverdichting in het landelijk gebied in kaart. Wageningen, Alterra, Alterra-Rapport 2409. 80 blz.; 15 fig.; 7 tab.; 50 re",TRUE,1||2||3||4||5||10||11||401||901||902,"c(1, 2, 3, 4, 5, 10, 11, 401, 901, 902)"
 B_SLOPE_DEGREE,Slope of the field,degrees,B,SLOPE,DEGREE,"",num,0,30,"",FALSE,"",NULL
 B_SOILTYPE_AGR,Agricultural soiltype,"",B,SOILTYPE,AGR,"",char,,,"",TRUE,moerige_klei||rivierklei||dekzand||zeeklei||dalgrond||veen||loess||duinzand||maasklei,"c(""moerige_klei"", ""rivierklei"", ""dekzand"", ""zeeklei"", ""dalgrond"", ""veen"", ""loess"", ""duinzand"", ""maasklei"")"
+D_OPI_GW,The opportunity index (risk x impact) to improve groundwaterrecharge,unitless,D,OPI,GW,"",num,0,1,"",FALSE,"",NULL
+D_OPI_NGW,The opportunity index (risk x impact) for nitrate leaching to groundwater given field properties,unitless,D,OPI,NGW,"",num,0,1,"",FALSE,"",NULL
+D_OPI_NSW,The opportunity index (risk x impact) for nitrate leaching and runoff to surface water given field properties,unitless,D,OPI,NSW,"",num,0,1,"",FALSE,"",NULL
+D_OPI_NUE,The opportunity index (risk x impact) to improve the efficiency of nitrogen and phosphorus fertilizer use given field properties,unitless,D,OPI,NUE,"",num,0,1,"",FALSE,"",NULL
+D_OPI_PSW,The opportunity index (risk x impact) for phosphorus leaching and runoff to surface water given field properties,unitless,D,OPI,PSW,"",num,0,1,"",FALSE,"",NULL
+D_OPI_WB,The opportunity index (risk x impact) to improve the potential to buffer and store water and efficiently use water for plant growth given field properties,unitless,D,OPI,WB,"",num,0,1,"",FALSE,"",NULL
+D_RISK_GW,The risk that there is too little groundwaterrecharge,unitless,D,RISK,GW,"",num,0,1,"",FALSE,"",NULL
+D_RISK_NGW,The risk for nitrate leaching to groundwater given field properties,unitless,D,RISK,NGW,"",num,0,1,"",FALSE,"",NULL
+D_RISK_NSW,The risk for nitrate leaching and runoff to surface water given field properties,unitless,D,RISK,NSW,"",num,0,1,"",FALSE,"",NULL
+D_RISK_NUE,The efficiency of nitrogen and phosphorus fertilizer use given field properties,unitless,D,RISK,NUE,"",num,0,1,"",FALSE,"",NULL
+D_RISK_PSW,The risk for phosphorus leaching and runoff to surface water given field properties,unitless,D,RISK,PSW,"",num,0,1,"",FALSE,"",NULL
+D_RISK_WB,The potential to buffer and store water and efficiently use water for plant growth given field properties,unitless,D,RISK,WB,"",num,0,1,"",FALSE,"",NULL
 D_RO_R,Surface runoff risk,-,D,RO,R,"",num,0,1,"",FALSE,"",NULL
 D_SA_W,"The wet perimeter index of the field, fraction that field is surrounded by water",unitless,D,SA,W,"",num,0,1,"",FALSE,"",NULL
+S_BBWP_GW,The scoring index for groundwaterrecharge,unitless,S,BBWP,GW,"",num,0,100,"",FALSE,"",NULL
 S_BBWP_NGW,The scoring index for lowering N emission to groundwater (risk times impact),unitless,S,BBWP,NGW,"",num,0,100,"",FALSE,"",NULL
 S_BBWP_NSW,The scoring index for lowering N emission to surface water (risk times impact),unitless,S,BBWP,NSW,"",num,0,100,"",FALSE,"",NULL
 S_BBWP_NUE,The scoring index to use N and P inputs efficiently,unitless,S,BBWP,NUE,"",num,0,100,"",FALSE,"",NULL
