@@ -66,17 +66,17 @@ bbwp_field_scores <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOP
   checkmate::assert_numeric(A_P_AL, lower = bbwp_parms[code == "A_P_AL", value_min], upper = bbwp_parms[code == "A_P_AL", value_max],len = arg.length)
   checkmate::assert_numeric(B_SLOPE_DEGREE,lower = bbwp_parms[code == "B_SLOPE_DEGREE", value_min], upper = bbwp_parms[code == "B_SLOPE_DEGREE", value_max],len = arg.length)
   checkmate::assert_logical(M_DRAIN,len = arg.length)
-  checkmate::assert_numeric(D_SA_W, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_RISK_NGW, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_RISK_NSW, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_RISK_PSW, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_RISK_NUE, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_RISK_WB, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_RISK_GWR, lower = 0, upper = 1, len = arg.length)
+  checkmate::assert_numeric(D_SA_W, bbwp_parms[code == "D_SA_W", value_min], upper = bbwp_parms[code == "D_SA_W", value_max], len = arg.length)
+  checkmate::assert_numeric(D_RISK_NGW, bbwp_parms[code == "D_RISK_NGW", value_min], upper = bbwp_parms[code == "D_RISK_NGW", value_max], len = arg.length)
+  checkmate::assert_numeric(D_RISK_NSW, bbwp_parms[code == "D_RISK_NSW", value_min], upper = bbwp_parms[code == "D_RISK_NSW", value_max], len = arg.length)
+  checkmate::assert_numeric(D_RISK_PSW, bbwp_parms[code == "D_RISK_PSW", value_min], upper = bbwp_parms[code == "D_RISK_PSW", value_max], len = arg.length)
+  checkmate::assert_numeric(D_RISK_NUE, bbwp_parms[code == "D_RISK_NUE", value_min], upper = bbwp_parms[code == "D_RISK_NUE", value_max], len = arg.length)
+  checkmate::assert_numeric(D_RISK_WB, bbwp_parms[code == "D_RISK_WB", value_min], upper = bbwp_parms[code == "D_RISK_WB", value_max], len = arg.length)
+  checkmate::assert_numeric(D_RISK_GWR, bbwp_parms[code == "D_RISK_GWR", value_min], upper = bbwp_parms[code == "D_RISK_GWR", value_max], len = arg.length)
   checkmate::assert_logical(B_GWP,len = arg.length)
   checkmate::assert_logical(B_AREA_DROUGHT,len = arg.length)
-  checkmate::assert_numeric(B_CT_PSW, lower = 0, upper = 50, len = arg.length)
-  checkmate::assert_numeric(B_CT_NSW, lower = 0, upper = 100, len = arg.length)
+  checkmate::assert_numeric(B_CT_PSW, bbwp_parms[code == "B_CT_PSW", value_min], upper = bbwp_parms[code == "B_CT_PSW", value_max], len = arg.length)
+  checkmate::assert_numeric(B_CT_NSW, lower = bbwp_parms[code == "B_CT_NSW", value_min], upper = bbwp_parms[code == "B_CT_NSW", value_max], len = arg.length)
 
   # load, check and update the measures database
   dt.measures <- bbwp_check_meas(measures,eco = FALSE,score = TRUE)
@@ -107,8 +107,7 @@ bbwp_field_scores <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOP
                   )
   
   # do check op groundwater class
-  checkmate::assert_subset(B_GWL_CLASS, choices = c(unlist(bbwp_parms[code == 'B_GWL_CLASS', choices]),
-                                                    c("Ia", "Ib", "IIa", "IIc", "IVc", "Vao", "Vad", "Vbo", "Vbd", "VIo", "VId", "VIIo", "VIId", "VIIIo", "VIIId")))
+  checkmate::assert_subset(B_GWL_CLASS, choices = unlist(bbwp_parms[code == 'B_GWL_CLASS', choices]))
   
   # calculate correction factors, depending on regional targets
   

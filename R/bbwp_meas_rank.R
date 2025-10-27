@@ -63,13 +63,13 @@ bbwp_meas_rank <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOPE_D
   checkmate::assert_numeric(A_P_CC, lower = bbwp_parms[code == "A_P_CC", value_min], upper = bbwp_parms[code == "A_P_CC", value_max],len = arg.length)
   checkmate::assert_numeric(A_P_AL, lower = bbwp_parms[code == "A_P_AL", value_min], upper = bbwp_parms[code == "A_P_AL", value_max],len = arg.length)
   checkmate::assert_numeric(B_SLOPE_DEGREE,lower = bbwp_parms[code == "B_SLOPE_DEGREE", value_min], upper = bbwp_parms[code == "B_SLOPE_DEGREE", value_max],len = arg.length)
-  checkmate::assert_numeric(D_SA_W, lower = 0, upper = 100,len = arg.length)
-  checkmate::assert_numeric(S_BBWP_NGW, lower = 0, upper = 100,len = arg.length)
-  checkmate::assert_numeric(S_BBWP_NSW, lower = 0, upper = 100,len = arg.length)
-  checkmate::assert_numeric(S_BBWP_PSW, lower = 0, upper = 100,len = arg.length)
-  checkmate::assert_numeric(S_BBWP_NUE, lower = 0, upper = 100,len = arg.length)
-  checkmate::assert_numeric(S_BBWP_WB, lower = 0, upper = 100,len = arg.length)
-  checkmate::assert_numeric(S_BBWP_GW, lower = 0, upper = 100,len = arg.length)
+  checkmate::assert_numeric(D_SA_W, lower =  bbwp_parms[code == "D_SA_W", value_min], upper = bbwp_parms[code == "D_SA_W", value_max], len = arg.length)
+  checkmate::assert_numeric(S_BBWP_NGW, lower = bbwp_parms[code == "S_BBWP_NGW", value_min], upper = bbwp_parms[code == "S_BBWP_NGW", value_max],len = arg.length)
+  checkmate::assert_numeric(S_BBWP_NSW, lower = bbwp_parms[code == "S_BBWP_NSW", value_min], upper = bbwp_parms[code == "S_BBWP_NSW", value_max],len = arg.length)
+  checkmate::assert_numeric(S_BBWP_PSW, lower = bbwp_parms[code == "S_BBWP_PSW", value_min], upper = bbwp_parms[code == "S_BBWP_PSW", value_max],len = arg.length)
+  checkmate::assert_numeric(S_BBWP_NUE, lower = bbwp_parms[code == "S_BBWP_NUE", value_min], upper = bbwp_parms[code == "S_BBWP_NUE", value_max],len = arg.length)
+  checkmate::assert_numeric(S_BBWP_WB, lower = bbwp_parms[code == "S_BBWP_WB", value_min], upper = bbwp_parms[code == "S_BBWP_WB", value_max],len = arg.length)
+  checkmate::assert_numeric(S_BBWP_GW, lower = bbwp_parms[code == "S_BBWP_GW", value_min], upper = bbwp_parms[code == "S_BBWP_GW", value_max],len = arg.length)
   checkmate::assert_subset(sector, choices = c('dairy', 'arable', 'tree_nursery', 'bulbs'))
   
   # load, check and update the measures database
@@ -101,8 +101,7 @@ bbwp_meas_rank <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOPE_D
   if(length(sector)==nrow(dt)){dt[,sector := sector]}
   
   # do check op groundwater class
-  checkmate::assert_subset(B_GWL_CLASS, choices = c(unlist(bbwp_parms[code == 'B_GWL_CLASS', choices]),
-                                                    c("Ia", "Ib", "IIa", "IIc", "IVc", "Vao", "Vad", "Vbo", "Vbd", "VIo", "VId", "VIIo", "VIId", "VIIIo", "VIIId")))
+  checkmate::assert_subset(B_GWL_CLASS, choices = unlist(bbwp_parms[code == 'B_GWL_CLASS', choices]))
   
   # merge inputs with data.table measures
   dt <- as.data.table(merge.data.frame(dt, dt.measures, all = TRUE))
