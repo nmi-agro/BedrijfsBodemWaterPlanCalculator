@@ -29,7 +29,7 @@ bbwp_field_scores(
   sector,
   penalty = TRUE,
   B_LS_HYDROCAT,
-  D_RISK_GWR
+  D_RISK_GW
 )
 }
 \arguments{
@@ -82,7 +82,7 @@ bbwp_field_scores(
 \item{B_LS_HYDROCAT}{(character) Landscape category for differentiating effect of measures on water buffering.
 (options: "hoge_gronden", "flanken", "beekdalen", "lokale_laagtes", "polders")}
 
-\item{D_RISK_GWR}{(numeric) the risk for a negative groundwater recharge}
+\item{D_RISK_GW}{(numeric) the risk for a negative groundwater recharge}
 }
 \description{
 Estimate the potential to contribute to agronomic and environmental challenges in a region

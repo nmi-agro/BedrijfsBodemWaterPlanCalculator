@@ -27,7 +27,7 @@
 #' @param penalty (boolean) the option to apply a penalty for high risk BBWP field indicators 
 #' @param B_LS_HYDROCAT (character) Landscape category for differentiating effect of measures on water buffering.
 #' (options: "hoge_gronden", "flanken", "beekdalen", "lokale_laagtes", "polders")
-#' @param D_RISK_GWR (numeric) the risk for a negative groundwater recharge
+#' @param D_RISK_GW (numeric) the risk for a negative groundwater recharge
 #'   
 #' @import data.table
 #'
@@ -37,7 +37,7 @@ bbwp_field_scores <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOP
                               M_DRAIN, D_SA_W, D_RISK_NGW, D_RISK_NSW, D_RISK_PSW, D_RISK_NUE, D_RISK_WB,
                               B_GWP, B_AREA_DROUGHT, B_CT_PSW, B_CT_NSW, 
                               B_CT_PSW_MAX = 0.5, B_CT_NSW_MAX = 5.0, measures, sector,penalty = TRUE, 
-                              B_LS_HYDROCAT, D_RISK_GWR){
+                              B_LS_HYDROCAT, D_RISK_GW){
   
   # add visual bindings
   cfngw = cfwb = cfnsw = cfpsw = cfnue = cfgw = NULL
@@ -56,7 +56,7 @@ bbwp_field_scores <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOP
                     length(B_SLOPE_DEGREE), length(B_LU_BBWP),length(M_DRAIN),length(D_SA_W),
                     length(D_RISK_NGW),length(D_RISK_NSW),length(D_RISK_PSW),length(D_RISK_NUE),
                     length(D_RISK_WB),length(B_GWP),length(B_AREA_DROUGHT),length(B_CT_PSW),
-                    length(B_CT_NSW), length(D_RISK_GWR))
+                    length(B_CT_NSW), length(D_RISK_GW))
   
   # check inputs
   checkmate::assert_subset(B_SOILTYPE_AGR, choices = unlist(bbwp_parms[code == "B_SOILTYPE_AGR", choices]))
@@ -72,7 +72,7 @@ bbwp_field_scores <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOP
   checkmate::assert_numeric(D_RISK_PSW, bbwp_parms[code == "D_RISK_PSW", value_min], upper = bbwp_parms[code == "D_RISK_PSW", value_max], len = arg.length)
   checkmate::assert_numeric(D_RISK_NUE, bbwp_parms[code == "D_RISK_NUE", value_min], upper = bbwp_parms[code == "D_RISK_NUE", value_max], len = arg.length)
   checkmate::assert_numeric(D_RISK_WB, bbwp_parms[code == "D_RISK_WB", value_min], upper = bbwp_parms[code == "D_RISK_WB", value_max], len = arg.length)
-  checkmate::assert_numeric(D_RISK_GWR, bbwp_parms[code == "D_RISK_GWR", value_min], upper = bbwp_parms[code == "D_RISK_GWR", value_max], len = arg.length)
+  checkmate::assert_numeric(D_RISK_GW, bbwp_parms[code == "D_RISK_GW", value_min], upper = bbwp_parms[code == "D_RISK_GW", value_max], len = arg.length)
   checkmate::assert_logical(B_GWP,len = arg.length)
   checkmate::assert_logical(B_AREA_DROUGHT,len = arg.length)
   checkmate::assert_numeric(B_CT_PSW, bbwp_parms[code == "B_CT_PSW", value_min], upper = bbwp_parms[code == "B_CT_PSW", value_max], len = arg.length)
@@ -97,7 +97,7 @@ bbwp_field_scores <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOP
                     D_RISK_PSW = D_RISK_PSW,
                     D_RISK_NUE = D_RISK_NUE,
                     D_RISK_WB = D_RISK_WB,
-                    D_RISK_GWR = D_RISK_GWR,
+                    D_RISK_GW = D_RISK_GW,
                     B_GWP = B_GWP,
                     B_AREA_DROUGHT = B_AREA_DROUGHT,
                     B_CT_PSW = B_CT_PSW,
@@ -158,7 +158,7 @@ bbwp_field_scores <- function(B_SOILTYPE_AGR, B_GWL_CLASS, A_P_CC,A_P_AL, B_SLOP
     dt[,D_OPI_PSW := (0.5 + cfpsw/2) * OBIC::evaluate_logistic(D_RISK_PSW, b=6, x0=0.4, v=.7)]
     dt[,D_OPI_NUE := (0.5 + cfnue/2) * OBIC::evaluate_logistic(D_RISK_NUE, b=6, x0=0.4, v=.7)]
     dt[,D_OPI_WB := (0.5 + cfwb/2) * OBIC::evaluate_logistic(D_RISK_WB, b=6, x0=0.4, v=.7)]
-    dt[,D_OPI_GW := (0.1 + cfgw/(1/0.9)) * OBIC::evaluate_logistic(D_RISK_GWR, b=6, x0=0.4, v=.7)]
+    dt[,D_OPI_GW := (0.1 + cfgw/(1/0.9)) * OBIC::evaluate_logistic(D_RISK_GW, b=6, x0=0.4, v=.7)]
     
     # column names for impact of measures on the five indexes (do not change order)
     mcols <- c('D_MEAS_NGW', 'D_MEAS_NSW', 'D_MEAS_PSW', 'D_MEAS_NUE', 'D_MEAS_WB', 'D_MEAS_GW', 'D_MEAS_TOT') # not clear why the order shouldnt be changed and whether it is okay to place D_MEAS_GW between WB and TOT
