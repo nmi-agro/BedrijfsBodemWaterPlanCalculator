@@ -1,3 +1,11 @@
+# BBWP v3.1.1 2025-x-x
+## Added
+* Some variables to the bbwp_parms table
+
+## Changed
+* Renamed D_RISK_GWR to D_RISK_GW
+* Made more assertions use bbwp_parms for minimum and maximum values
+
 # BBWPC v3.1.0 2025-08-04
 ## Added
 * BRP crop codes for 2025: 7137, 7138, 7135, 7134 [PL-40]
