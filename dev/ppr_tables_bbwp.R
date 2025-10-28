@@ -36,7 +36,12 @@ bbwp_measures2[,temp_effect_wb := NULL]
 bbwp_measures <- copy(bbwp_measures2)
 rm(bbwp_measures2)
 
+# repair effect costs which are to high
+bbwp_measures[, effect_costs := as.numeric(effect_costs)]
+bbwp_measures[effect_costs>3, effect_costs := effect_costs/10]
+
 # Overwrite bbwp measure table
+fwrite(bbwp_measures, 'data-raw/bbwp_measures.csv')
 use_data(bbwp_measures, overwrite = TRUE)
   
   
