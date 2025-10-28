@@ -1,4 +1,4 @@
-test_that("check bbwp_farm_score", {
+test_that("bbwp_farm_score calculates correctly with equal area and equal scores", {
   expect_equal(
     bbwp_farm_score(
       S_BBWP_TOT = seq(0, 10, 2.5),
@@ -22,7 +22,7 @@ test_that("check bbwp_farm_score", {
     tolerance = 0.01)
 })
 
-test_that("check bbwp_farm_score", {
+test_that("bbwp_farm_score calculates correctly with variable area and variable scores", {
   expect_equal(
     bbwp_farm_score(
       S_BBWP_TOT = seq(0, 100, 25),
