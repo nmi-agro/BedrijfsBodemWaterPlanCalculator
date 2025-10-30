@@ -12,3 +12,4 @@ er_measures[, eco_app := 1]
 
 # save measures as bbwp table
 use_data(er_measures, overwrite = TRUE)
+fwrite(er_measures, 'data-raw/er_measures.csv')
