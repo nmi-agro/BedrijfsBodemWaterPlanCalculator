@@ -10,8 +10,8 @@ library(pandex);library(data.table);library(stringr)
                                        "S_BBWP_NGW", 'S_BBWP_NSW', 'S_BBWP_NUE', 'S_BBWP_PSW', 'S_BBWP_TOT', 'S_BBWP_WB', 'S_BBWP_GW',
                                        'D_RISK_NGW', 'D_RISK_NSW', 'D_RISK_PSW', 'D_RISK_NUE', 'D_RISK_WB', 'D_RISK_GW',
                                        'B_CT_PSW', 'B_CT_NSW', 
-                                       'D_OPI_NGW', 'D_OPI_NSW', 'D_OPI_PSW', 'D_OPI_NUE', 'D_OPI_WB', 'D_OPI_GW'
-                                       )]
+                                       'D_OPI_NGW', 'D_OPI_NSW', 'D_OPI_PSW', 'D_OPI_NUE', 'D_OPI_WB', 'D_OPI_GW',
+                                       'B_SA_W')]
   
   # Unpack options
   for(this.code in bbwp_parms[enum == TRUE, code]){

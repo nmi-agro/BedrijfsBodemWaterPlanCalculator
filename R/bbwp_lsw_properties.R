@@ -91,7 +91,7 @@ bbwp_lsw_properties  <- function(B_LSW_ID,
   checkmate::assert_numeric(B_P_CC, lower = bbwp_parms[code == "A_P_CC", value_min], upper = bbwp_parms[code == "A_P_CC", value_max],len = arg.length)
   checkmate::assert_numeric(B_P_AL, lower = bbwp_parms[code == "A_P_AL", value_min], upper = bbwp_parms[code == "A_P_AL", value_max],len = arg.length)
   checkmate::assert_numeric(B_P_WA, lower = bbwp_parms[code == "A_P_WA", value_min], upper = bbwp_parms[code == "A_P_WA", value_max],len = arg.length)
-  checkmate::assert_numeric(B_SA_W, lower = 0, upper = 1, len = arg.length)
+  checkmate::assert_numeric(B_SA_W, lower = bbwp_parms[code == "B_SA_W", value_min], upper = bbwp_parms[code == "B_SA_W", value_max], len = arg.length)
   checkmate::assert_numeric(B_RO_R, lower = bbwp_parms[code == "D_RO_R", value_min], upper = bbwp_parms[code == "D_RO_R", value_max],len = arg.length)
   
   # check variation in SD values, requires values bigger than zero
