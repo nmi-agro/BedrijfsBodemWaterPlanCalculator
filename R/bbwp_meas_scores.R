@@ -59,21 +59,20 @@ bbwp_meas_score <- function(B_SOILTYPE_AGR, B_GWL_CLASS,  A_P_CC,A_P_AL, B_SLOPE
   
   # check inputs
   checkmate::assert_subset(B_SOILTYPE_AGR, choices = unlist(bbwp_parms[code == "B_SOILTYPE_AGR", choices]))
-  checkmate::assert_subset(B_GWL_CLASS, choices = c(unlist(bbwp_parms[code == 'B_GWL_CLASS', choices]),
-                                                    c("Ia", "Ib", "IIa", "IIc", "IVc", "Vao", "Vad", "Vbo", "Vbd", "VIo", "VId", "VIIo", "VIId", "VIIIo", "VIIId")))
+  checkmate::assert_subset(B_GWL_CLASS, choices = unlist(bbwp_parms[code == 'B_GWL_CLASS', choices]))
   checkmate::assert_subset(B_LU_BBWP, choices = unlist(bbwp_parms[code == "B_LU_BBWP", choices]))
   checkmate::assert_character(B_LU_BBWP, len = arg.length)
   checkmate::assert_logical(M_DRAIN,len = arg.length)
   checkmate::assert_numeric(A_P_CC, lower = bbwp_parms[code == "A_P_CC", value_min], upper = bbwp_parms[code == "A_P_CC", value_max],len = arg.length)
   checkmate::assert_numeric(A_P_AL, lower = bbwp_parms[code == "A_P_AL", value_min], upper = bbwp_parms[code == "A_P_AL", value_max],len = arg.length)
   checkmate::assert_numeric(B_SLOPE_DEGREE, lower = bbwp_parms[code == "B_SLOPE_DEGREE", value_min], upper = bbwp_parms[code == "B_SLOPE_DEGREE", value_max],len = arg.length)
-  checkmate::assert_numeric(D_SA_W, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_OPI_NGW, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_OPI_NSW, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_OPI_PSW, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_OPI_NUE, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_OPI_WB, lower = 0, upper = 1, len = arg.length)
-  checkmate::assert_numeric(D_OPI_GW, lower = 0, upper = 1, len = arg.length)
+  checkmate::assert_numeric(D_SA_W, lower =  bbwp_parms[code == "D_SA_W", value_min], upper = bbwp_parms[code == "D_SA_W", value_max], len = arg.length)
+  checkmate::assert_numeric(D_OPI_NGW, bbwp_parms[code == "D_OPI_NGW", value_min], upper = bbwp_parms[code == "D_OPI_NGW", value_max], len = arg.length)
+  checkmate::assert_numeric(D_OPI_NSW, bbwp_parms[code == "D_OPI_NSW", value_min], upper = bbwp_parms[code == "D_OPI_NSW", value_max], len = arg.length)
+  checkmate::assert_numeric(D_OPI_PSW, bbwp_parms[code == "D_OPI_PSW", value_min], upper = bbwp_parms[code == "D_OPI_PSW", value_max], len = arg.length)
+  checkmate::assert_numeric(D_OPI_NUE, bbwp_parms[code == "D_OPI_NUE", value_min], upper = bbwp_parms[code == "D_OPI_NUE", value_max], len = arg.length)
+  checkmate::assert_numeric(D_OPI_WB,  bbwp_parms[code == "D_OPI_WB", value_min], upper = bbwp_parms[code == "D_OPI_WB", value_max], len = arg.length)
+  checkmate::assert_numeric(D_OPI_GW,  bbwp_parms[code == "D_OPI_GW", value_min], upper = bbwp_parms[code == "D_OPI_GW", value_max], len = arg.length)
   checkmate::assert_subset(sector, choices = c('dairy', 'arable', 'tree_nursery', 'bulbs'))
 
   # collect data in one data.table

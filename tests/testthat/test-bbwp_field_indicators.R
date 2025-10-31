@@ -34,7 +34,7 @@ test_that("check bbwp_field_indicators", {
       D_RISK_PSW = c(0.01,0.1,0.4,0.6,0.8,1),
       D_RISK_NUE = c(0, 0.2, 0.4, 0.6, 0.8, 1),
       D_RISK_WB = c(0, 0.2, 0.4, 0.6, 0.8, 1),
-      D_RISK_GWR = c(0, 0.2, 0.4, 0.6, 0.8, 1)
+      D_RISK_GW = c(0, 0.2, 0.4, 0.6, 0.8, 1)
     ),
     tolerance = 0.01)
 })

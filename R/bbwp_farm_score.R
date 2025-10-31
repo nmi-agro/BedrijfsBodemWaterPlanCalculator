@@ -27,13 +27,13 @@ bbwp_farm_score <- function(S_BBWP_TOT,S_BBWP_NGW,S_BBWP_NSW,S_BBWP_PSW,S_BBWP_N
                     length(S_BBWP_NUE),length(S_BBWP_WB),length(B_AREA), length(S_BBWP_GW))
   
   # check inputs
-  checkmate::assert_numeric(S_BBWP_TOT, lower = 0, upper = 100, len = arg.length)
-  checkmate::assert_numeric(S_BBWP_NGW, lower = 0, upper = 100, len = arg.length)
-  checkmate::assert_numeric(S_BBWP_NSW, lower = 0, upper = 100, len = arg.length)
-  checkmate::assert_numeric(S_BBWP_PSW, lower = 0, upper = 100, len = arg.length)
-  checkmate::assert_numeric(S_BBWP_NUE, lower = 0, upper = 100, len = arg.length)
-  checkmate::assert_numeric(S_BBWP_WB, lower = 0, upper = 100, len = arg.length)
-  checkmate::assert_numeric(S_BBWP_GW, lower = 0, upper = 100, len = arg.length)
+  checkmate::assert_numeric(S_BBWP_TOT, lower = bbwp_parms[code == "S_BBWP_TOT", value_min], upper = bbwp_parms[code == "S_BBWP_TOT", value_max], len = arg.length)
+  checkmate::assert_numeric(S_BBWP_NGW, lower = bbwp_parms[code == "S_BBWP_NGW", value_min], upper = bbwp_parms[code == "S_BBWP_NGW", value_max], len = arg.length)
+  checkmate::assert_numeric(S_BBWP_NSW, lower = bbwp_parms[code == "S_BBWP_NSW", value_min], upper = bbwp_parms[code == "S_BBWP_NSW", value_max], len = arg.length)
+  checkmate::assert_numeric(S_BBWP_PSW, lower = bbwp_parms[code == "S_BBWP_PSW", value_min], upper = bbwp_parms[code == "S_BBWP_PSW", value_max], len = arg.length)
+  checkmate::assert_numeric(S_BBWP_NUE, lower = bbwp_parms[code == "S_BBWP_NUE", value_min], upper = bbwp_parms[code == "S_BBWP_NUE", value_max], len = arg.length)
+  checkmate::assert_numeric(S_BBWP_WB,  lower = bbwp_parms[code == "S_BBWP_WB", value_min], upper = bbwp_parms[code == "S_BBWP_WB", value_max], len = arg.length)
+  checkmate::assert_numeric(S_BBWP_GW,  lower = bbwp_parms[code == "S_BBWP_GW", value_min], upper = bbwp_parms[code == "S_BBWP_GW", value_max], len = arg.length)
   checkmate::assert_numeric(B_AREA, lower = bbwp_parms[code == "B_AREA", value_min], upper = bbwp_parms[code == "B_AREA", value_max], len = arg.length)
   
   

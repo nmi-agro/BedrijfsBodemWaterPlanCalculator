@@ -165,13 +165,13 @@ bbwp_field_indicators <- function(D_NGW_SCR,D_NGW_LEA,D_NGW_NLV,
   # replace output names
   setnames(dt,
            old=c('NGW','NSW','NUE','PSW','WUE', 'GW'),
-           new = c('D_RISK_NGW','D_RISK_NSW','D_RISK_NUE','D_RISK_PSW','D_RISK_WB', 'D_RISK_GWR'))
+           new = c('D_RISK_NGW','D_RISK_NSW','D_RISK_NUE','D_RISK_PSW','D_RISK_WB', 'D_RISK_GW'))
   
   # sort output based on id
   setorder(dt,id)
   
   # extract output
-  out <- dt[,mget(c('D_RISK_NGW','D_RISK_NSW','D_RISK_PSW','D_RISK_NUE','D_RISK_WB', 'D_RISK_GWR'))]
+  out <- dt[,mget(c('D_RISK_NGW','D_RISK_NSW','D_RISK_PSW','D_RISK_NUE','D_RISK_WB', 'D_RISK_GW'))]
   
   # return output
   return(out)
