@@ -28,12 +28,12 @@ er_farm_score <- function(S_ER_SOIL,S_ER_WATER,S_ER_CLIMATE,S_ER_BIODIVERSITY,S_
                     length(S_ER_BIODIVERSITY),length(S_ER_LANDSCAPE),length(B_AREA))
   
   # check inputs
-  checkmate::assert_numeric(S_ER_REWARD, lower = 0, len = arg.length)
-  checkmate::assert_numeric(S_ER_SOIL, lower = 0, len = arg.length)
-  checkmate::assert_numeric(S_ER_WATER, lower = 0, len = arg.length)
-  checkmate::assert_numeric(S_ER_CLIMATE, lower = 0, len = arg.length)
-  checkmate::assert_numeric(S_ER_BIODIVERSITY, lower = 0, len = arg.length)
-  checkmate::assert_numeric(S_ER_LANDSCAPE, lower = 0, len = arg.length)
+  checkmate::assert_numeric(S_ER_REWARD, bbwp_parms[code == "S_ER_REWARD", value_min], upper = bbwp_parms[code == "S_ER_REWARD", value_max], len = arg.length)
+  checkmate::assert_numeric(S_ER_SOIL, bbwp_parms[code == "S_ER_SOIL", value_min], upper = bbwp_parms[code == "S_ER_SOIL", value_max], len = arg.length)
+  checkmate::assert_numeric(S_ER_WATER, bbwp_parms[code == "S_ER_WATER", value_min], upper = bbwp_parms[code == "S_ER_WATER", value_max], len = arg.length)
+  checkmate::assert_numeric(S_ER_CLIMATE, bbwp_parms[code == "S_ER_CLIMATE", value_min], upper = bbwp_parms[code == "S_ER_CLIMATE", value_max], len = arg.length)
+  checkmate::assert_numeric(S_ER_BIODIVERSITY, bbwp_parms[code == "S_ER_BIODIVERSITY", value_min], upper = bbwp_parms[code == "S_ER_BIODIVERSITY", value_max], len = arg.length)
+  checkmate::assert_numeric(S_ER_LANDSCAPE, bbwp_parms[code == "S_ER_LANDSCAPE", value_min], upper = bbwp_parms[code == "S_ER_LANDSCAPE", value_max], len = arg.length)
   checkmate::assert_numeric(B_AREA, lower = 10, upper = bbwp_parms[code == "B_AREA", value_max], len = arg.length)
   
   # collect data in one data.table

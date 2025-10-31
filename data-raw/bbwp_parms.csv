@@ -112,3 +112,9 @@ S_BBWP_NUE,The scoring index to use N and P inputs efficiently,unitless,S,BBWP,N
 S_BBWP_PSW,The scoring index for lowering P emission to surface water (risk times impact),unitless,S,BBWP,PSW,"",num,0,100,"",FALSE,"",NULL
 S_BBWP_TOT,The score for the integrative opportunity index (risk times impact),unitless,S,BBWP,TOT,"",num,0,100,"",FALSE,"",NULL
 S_BBWP_WB,The scoring index to buffer and store water and efficiently use water for plant growth,unitless,S,BBWP,WB,"",num,0,100,"",FALSE,"",NULL
+S_ER_BIODIVERSITY,The Ecoregeling scoring index for biodiversity quality for each field,unitless,S,ER,BIODIVERSITY,"",num,0,100,"",FALSE,"",NULL
+S_ER_CLIMATE,The Ecoregeling scoring index for climate quality for each field,unitless,S,ER,CLIMATE,"",num,0,100,"",FALSE,"",NULL
+S_ER_LANDSCAPE,The Ecoregeling scoring index for landscape quality for each field,unitless,S,ER,LANDSCAPE,"",num,0,100,"",FALSE,"",NULL
+S_ER_REWARD,The financial reward per field for taking Ecoregeling measures,euro/ha,S,ER,REWARD,"",num,0,10000,"",FALSE,"",NULL
+S_ER_SOIL,The Ecoregeling scoring index for soil quality for each field,unitless,S,ER,SOIL,"",num,0,100,"",FALSE,"",NULL
+S_ER_WATER,The Ecoregeling scoring index for water quality for each field,unitless,S,ER,WATER,"",num,0,100,"",FALSE,"",NULL
