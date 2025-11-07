@@ -116,7 +116,7 @@
 #' 
 #' \describe{
 #'   \item{eco_id}{The Ecoregeling measure id}
-#'   \item{B_lU_BRP}{The Dutch crop id from the BRP}
+#'   \item{B_LU_BRP}{The Dutch crop id from the BRP}
 #'   \item{eco_app}{A helper variable telling that the measure is applicable for that crop}
 #' }
 "er_measures"
