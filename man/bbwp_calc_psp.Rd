@@ -4,7 +4,7 @@
 \alias{bbwp_calc_psp}
 \title{Calculate precipitation surplus}
 \usage{
-OBIC::calc_psp(B_LU_BRP, M_GREEN, M_GREEN_START = 10L, M_GREEN_TERMINATE = 3L)
+bbwp_calc_psp(B_LU_BRP, M_GREEN, M_GREEN_START = 10L, M_GREEN_TERMINATE = 3L)
 }
 \arguments{
 \item{B_LU_BRP}{(numeric) The crop code from the BRP}
