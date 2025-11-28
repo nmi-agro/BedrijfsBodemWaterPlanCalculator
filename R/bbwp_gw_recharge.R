@@ -73,21 +73,17 @@ bbwp_wat_groundwater_recharge <- function(B_LU_BRP,B_SC_WENR,B_GWL_CLASS,M_DRAIN
   
   # estimate derivatives: sealing risk, precipitation surplus and saturated permeability
   dt[, D_SE := OBIC::calc_sealing_risk(A_SOM_LOI, A_CLAY_MI)]
-  dt[, D_PSP := bbwp_calc_psp(B_LU_BRP, M_GREEN)]
+  dt[, D_PSP := OBIC::calc_psp(B_LU_BRP, M_GREEN)]
   dt[, D_WRI_K := OBIC::calc_permeability(A_CLAY_MI,A_SAND_MI,A_SILT_MI,A_SOM_LOI)]
-  
-  # estimate distance to target for soil compaction and sealing
-  dt[, I_P_CO := OBIC::ind_compaction(B_SC_WENR)]
-  dt[, I_P_SE := OBIC::ind_sealing(D_SE, B_LU_BRP)]
-  
+
   # calculate indicator for groundwater recharge
   dt[, value := OBIC::ind_gw_recharge(B_LU_BRP = B_LU_BRP,
                                       D_PSP = D_PSP,
                                       D_WRI_K = D_WRI_K,
-                                      I_P_SE = I_P_SE,
-                                      I_P_CO = I_P_CO,
                                       B_DRAIN = M_DRAIN,
-                                      B_GWL_CLASS = B_GWL_CLASS)]
+                                      B_GWL_CLASS = B_GWL_CLASS,
+                                      D_SE = D_SE,
+                                      B_SC_WENR = B_SC_WENR)]
   
   # extract value I_H_GWR
   value <- dt[, value]
