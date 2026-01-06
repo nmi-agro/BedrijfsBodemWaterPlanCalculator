@@ -1,0 +1,240 @@
+# Calculate the BBWP scores on field and farm level
+
+Estimate the potential to contribute to agronomic and environmental
+challenges in a region for a farm and assess the impact of farm measures
+taken. A high BBWP score is indicative for the number of opportunities
+to improve soil quality and land use.
+
+## Usage
+
+``` r
+bbwp(
+  B_SOILTYPE_AGR,
+  B_LU_BBWP = NA_character_,
+  B_GWL_CLASS,
+  B_SC_WENR,
+  B_HELP_WENR,
+  B_SLOPE = NULL,
+  B_SLOPE_DEGREE = NULL,
+  B_AER_CBS,
+  A_CLAY_MI,
+  A_SAND_MI,
+  A_SILT_MI,
+  A_SOM_LOI,
+  A_N_RT,
+  A_FE_OX,
+  A_AL_OX,
+  A_P_CC,
+  A_P_AL,
+  A_P_WA,
+  A_P_SG,
+  B_GWP,
+  B_AREA_DROUGHT,
+  B_CT_PSW,
+  B_CT_NSW,
+  B_CT_PSW_MAX = 0.5,
+  B_CT_NSW_MAX = 5,
+  D_SA_W,
+  D_RO_R,
+  B_AREA,
+  M_DRAIN,
+  B_LSW_ID,
+  LSW = NULL,
+  measures,
+  sector,
+  output = "scores",
+  penalty = TRUE,
+  B_LS_HYDROCAT = NULL,
+  M_GREEN = M_GREEN,
+  B_LU_BRP
+)
+```
+
+## Arguments
+
+- B_SOILTYPE_AGR:
+
+  (character) The type of soil, using agronomic classification
+
+- B_LU_BBWP:
+
+  (character) DEPRECATED The BBWP category used for allocation of
+  measures to BBWP crop categories
+
+- B_GWL_CLASS:
+
+  (character) The groundwater table class
+
+- B_SC_WENR:
+
+  (integer) The risk for subsoil compaction as derived from risk
+  assessment study of Van den Akker (2006). Options include:
+  1,2,3,4,5,10,11,401,901 and 902.
+
+- B_HELP_WENR:
+
+  (character) The soil type abbreviation, derived from 1:50.000 soil map
+
+- B_SLOPE:
+
+  (boolean) DEPRECATED, use B_SLOPE_DEGREE instead. Is the slope of the
+  field, steeper than 3%?
+
+- B_SLOPE_DEGREE:
+
+  (numeric) The slope of the field (degrees)
+
+- B_AER_CBS:
+
+  (character) The agricultural economic region in the Netherlands (CBS,
+  2016)
+
+- A_CLAY_MI:
+
+  (numeric) The clay content of the soil (%)
+
+- A_SAND_MI:
+
+  (numeric) The sand content of the soil (%)
+
+- A_SILT_MI:
+
+  (numeric) The silt content of the soil (%)
+
+- A_SOM_LOI:
+
+  (numeric) The organic matter content of the soil (%)
+
+- A_N_RT:
+
+  (numeric) The organic nitrogen content of the soil (mg N / kg)
+
+- A_FE_OX:
+
+  (numeric) The aluminium content of soil (mmol / kg)
+
+- A_AL_OX:
+
+  (numeric) The iron content of soil (mmol / kg)
+
+- A_P_CC:
+
+  (numeric) The plant available P content, measured via 0.01M CaCl2
+  extraction (mg / kg)
+
+- A_P_AL:
+
+  (numeric) The plant extractable P content, measured via ammonium
+  lactate extraction (mg / kg)
+
+- A_P_WA:
+
+  (numeric) The P-content of the soil extracted with water (mg P2O5 / L)
+
+- A_P_SG:
+
+  (numeric) The P-saturation index (%)
+
+- B_GWP:
+
+  (boolean) is the field located in a groundwater protected area
+  (options: TRUE or FALSE)
+
+- B_AREA_DROUGHT:
+
+  (boolean) is the field located in an area with high risks for water
+  deficiencies (options: TRUE or FALSE)
+
+- B_CT_PSW:
+
+  (numeric) the critical target for required reduction in P loss from
+  agriculture (kg P / ha) to reach targets of KRW
+
+- B_CT_NSW:
+
+  (numeric) the critical target for required reduction in N loss from
+  agriculture (kg N / ha) to reach targets of KRW
+
+- B_CT_PSW_MAX:
+
+  (numeric) the max critical target for P reduction loss (kg P / ha)
+
+- B_CT_NSW_MAX:
+
+  (numeric) the max critical target for N reduction loss (kg N / ha)
+
+- D_SA_W:
+
+  (numeric) The wet perimeter index of the field, fraction that field is
+  surrounded by water
+
+- D_RO_R:
+
+  (numeric) The risk that surface water runs off the parcel
+
+- B_AREA:
+
+  (numeric) the area of the field (m2)
+
+- M_DRAIN:
+
+  (boolean) is there tube drainage present in the field
+
+- B_LSW_ID:
+
+  (character) An unique identifier for each Local Surface Water per
+  field
+
+- LSW:
+
+  (data.table) The averaged soil properties (mean and sd) per Local
+  Surface Water. Can be derived from bbwp_lsw_properties.
+
+- measures:
+
+  (data.table) the measures planned / done per fields
+
+- sector:
+
+  (string) a vector with the farm type given the agricultural sector
+  (options: options: 'dairy', 'arable', 'tree_nursery', 'bulbs')
+
+- output:
+
+  (string) a vector specifying the output type of the function. Options:
+  scores, measures
+
+- penalty:
+
+  (boolean) the option to apply a penalty for high risk BBWP field
+  indicators
+
+- B_LS_HYDROCAT:
+
+  (character) Landscape category for differentiating effect of measures
+  on water buffering. (options: "hoge_gronden", "flanken", "beekdalen",
+  "lokale_laagtes", "polders")
+
+- M_GREEN:
+
+  (boolean) A soil measure. Are catch crops sown after main crop
+  (optional, option: yes or no)
+
+- B_LU_BRP:
+
+  (numeric) The crop code (gewascode) from the BRP
+
+## Details
+
+B_SLOPE_DEGREE should be used, for backwards compatibility B_SLOPE can
+still be used. At least one of the must be used, when both are supplied,
+B_SLOPE is ignored.
+
+LSW is by default a data.table with LSW properties, being calculated
+from bbwp_lsw_properties. Note that all B_LSW_IDs should be pre-set in
+the LSW data.table.
+
+`bbwp()` no longer supports '-' as valid input for B_GWL_CLASS. Users
+should use their best judgement to decide on the most suitable valid
+value for such fields. Valid values can be found in
+`bbwp_parms[code == 'B_GWL_CLASS', choices]`
