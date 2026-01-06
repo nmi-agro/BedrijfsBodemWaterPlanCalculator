@@ -195,4 +195,14 @@ test <- ecoregeling(B_SOILTYPE_AGR = c('dekzand', 'loess', 'rivierklei'),
       expected = c("B166" ,"B171", "B155", "B132", "B149"))
   })
   
-  
+## check completeness of B_LU_BRP codes
+test_that("All B_LU_BRP codes in er_crops are listed as choices in bbwp_parms[code == 'B_LU_BRP'] and visa versa",{
+  expect_equal(
+    object = sort(unique(er_crops$B_LU_BRP)),
+    expected = sort(unlist(bbwp_parms[code == 'B_LU_BRP', choices]))
+  )
+  expect_equal(
+    object = sort(unlist(bbwp_parms[code == 'B_LU_BRP', choices])),
+    expected = sort(unique(er_crops$B_LU_BRP))
+  )
+})

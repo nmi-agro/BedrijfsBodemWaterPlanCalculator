@@ -12,9 +12,6 @@ library(pandex);library(data.table);library(stringr)
   for(this.code in bbwp_parms[enum == TRUE, code]){
     bbwp_parms[code == this.code, choices := list(pandex::enum_opts(this.code))]
   }
-  # remove "-" as choice for B_GWL_CLASS
-  bbwp_parms[code == 'B_GWL_CLASS', choices := 
-               list(pandex::enum_opts("B_GWL_CLASS")[!pandex::enum_opts("B_GWL_CLASS") == '-'])]
 
   # Set upper for B_AREA
   bbwp_parms[code == 'B_AREA', value_max := 500000000]

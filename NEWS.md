@@ -1,3 +1,7 @@
+# BBWPC V3.1.1 2026-01-05
+## Fixed
+* BRP crop codes for 2025 not being included in table bbwp_parms columns options and choices
+
 # BBWPC v3.1.0 2025-08-04
 ## Added
 * BRP crop codes for 2025: 7137, 7138, 7135, 7134 [PL-40]
