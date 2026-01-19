@@ -1,5 +1,12 @@
 # Changelog
 
+## BBWPC V3.1.2 2026-01-19
+
+### Fixed
+
+- Fixes classification of groundwater classes in `bbwp_field_properties`
+  \[BBWP-163\]
+
 ## BBWPC V3.1.1 2026-01-05
 
 ### Fixed
