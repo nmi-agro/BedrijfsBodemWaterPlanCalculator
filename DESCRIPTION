@@ -23,10 +23,10 @@ Imports:
     checkmate,
     data.table,
     OBIC (>= 4.0.0)
-Remotes: AgroCares/BLN
+Remotes: nmi-agro/BLN
 License: GPL-3 | file LICENSE
-URL: https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator, https://agrocares.github.io/BedrijfsBodemWaterPlanCalculator/
-BugReports: https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues
+URL: https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator, https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/
+BugReports: https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
