@@ -17,7 +17,7 @@ bbwp_measures <- fread('dev/measures.csv', encoding = 'UTF-8')
 # load updated measure table, which includes weighing factor for 5 landscape category and effect_wb was updated
 # (for hydrological module, made for project 2044.N.24)
 # The table was made in Github Repository "NMI-DATA_scripts"
-# (https://github.com/AgroCares/NMI-DATA_scripts/blob/main/watersysteem/bbwp_hydrologische_module/bbwp_hydro_meas.R)
+# (https://github.com/nmi-agro/NMI-DATA_scripts/blob/main/watersysteem/bbwp_hydrologische_module/bbwp_hydro_meas.R)
 # This is the table userd for >= version 2.3.0
 bbwp_measures2 <- fread('dev/bbwp_measures.csv', encoding = 'UTF-8')
 

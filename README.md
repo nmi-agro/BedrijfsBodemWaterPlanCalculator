@@ -2,9 +2,9 @@
 
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Codecov test coverage](https://codecov.io/gh/AgroCares/BedrijfsBodemWaterPlanCalculator/graph/badge.svg)](https://app.codecov.io/gh/AgroCares/BedrijfsBodemWaterPlanCalculator)
-[![R-CMD-check](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/workflows/R-CMD-check/badge.svg)](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/actions)
-[![R-CMD-check](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/nmi-agro/BedrijfsBodemWaterPlanCalculator/graph/badge.svg)](https://app.codecov.io/gh/nmi-agro/BedrijfsBodemWaterPlanCalculator)
+[![R-CMD-check](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/workflows/R-CMD-check/badge.svg)](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/actions)
+[![R-CMD-check](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ![bedrijfsbodembaterplan_rgb](https://user-images.githubusercontent.com/37927107/139035649-5244795c-6687-42a5-a15d-169a54050903.png)
@@ -15,10 +15,10 @@
 
 `BBWPC` can be installed from GitHub using `remotes`. This will install the current development version from master branch. Stable versions can found at `releases`.
 ```
-remotes::install_github("AgroCares/BedrijfsBodemWaterPlanCalculator")
+remotes::install_github("nmi-agro/BedrijfsBodemWaterPlanCalculator")
 library("BBWPC")
 ```
 ## Documentation
-Documentation of the R functions in the `BBWPC` package can be found [here](https://agrocares.github.io/BedrijfsBodemWaterPlanCalculator/)
+Documentation of the R functions in the `BBWPC` package can be found [here](https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/)
 
 ![Logo of NMI](https://media.licdn.com/dms/image/C560BAQEYGcm4HjNnxA/company-logo_200_200/0?e=2159024400&v=beta&t=u40rJ7bixPWB2SAqaj3KCKzJRoKcqf0wUXCdmsTDQvw)
