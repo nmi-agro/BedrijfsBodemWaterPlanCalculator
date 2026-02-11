@@ -17,12 +17,12 @@ BedrijfsBodemWaterPlan can be found at www.bedrijfsbodemwaterplan.nl.
 
 Useful links:
 
-- <https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator>
+- <https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator>
 
-- <https://agrocares.github.io/BedrijfsBodemWaterPlanCalculator/>
+- <https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/>
 
 - Report bugs at
-  <https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues>
+  <https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues>
 
 ## Author
 

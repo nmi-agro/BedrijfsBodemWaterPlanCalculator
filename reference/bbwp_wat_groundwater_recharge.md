@@ -73,5 +73,7 @@ A_SILT_MI = rep(10,4),
 A_SOM_LOI = c(2,3,5,8),
 M_GREEN = rep(FALSE,4)
 )
+#> Warning: Use of I_P_SE in function ind_gw_recharge() is deprecated, provide D_SE instead.
+#> Warning: Use of I_P_CO in function ind_gw_recharge() is deprecated, provide B_SC_WENR instead.
 #> [1] 0.6776481 0.7208117 0.7787683 0.7852922
 ```

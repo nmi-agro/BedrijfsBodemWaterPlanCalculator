@@ -20,13 +20,13 @@ BedrijfsBodemWaterPlan at
 the current development version from master branch. Stable versions can
 found at `releases`.
 
-    remotes::install_github("AgroCares/BedrijfsBodemWaterPlanCalculator")
+    remotes::install_github("nmi-agro/BedrijfsBodemWaterPlanCalculator")
     library("BBWPC")
 
 ## Documentation
 
 Documentation of the R functions in the `BBWPC` package can be found
-[here](https://agrocares.github.io/BedrijfsBodemWaterPlanCalculator/)
+[here](https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/)
 
 ![Logo of
 NMI](https://media.licdn.com/dms/image/C560BAQEYGcm4HjNnxA/company-logo_200_200/0?e=2159024400&v=beta&t=u40rJ7bixPWB2SAqaj3KCKzJRoKcqf0wUXCdmsTDQvw)

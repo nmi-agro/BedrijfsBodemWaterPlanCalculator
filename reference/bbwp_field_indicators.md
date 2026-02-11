@@ -180,7 +180,7 @@ number of fields given as input i.e. the length of the vector inputs
 ## Details
 
 bbwp_field_indicators is typically called after
-[bbwp_field_properties](https://agrocares.github.io/BedrijfsBodemWaterPlanCalculator/reference/bbwp_field_properties.md)
+[bbwp_field_properties](https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/reference/bbwp_field_properties.md)
 which calculates the inputs for bbwp_field_indicators
 
 ## Examples

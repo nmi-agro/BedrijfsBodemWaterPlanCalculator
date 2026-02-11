@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">BBWPC</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@
 <li class="active nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -29,9 +29,17 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="3.1.3" id="bbwpc-v313-2026-02-11">BBWPC V3.1.3 2026-02-11<a class="anchor" aria-label="anchor" href="#bbwpc-v313-2026-02-11"></a></h2>
+<div class="section level3">
+<h3 id="changed-3-1-3">Changed<a class="anchor" aria-label="anchor" href="#changed-3-1-3"></a></h3>
+<ul><li>Rename organization to <code>nmi-agro</code>
+</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="3.1.2" id="bbwpc-v312-2026-01-19">BBWPC V3.1.2 2026-01-19<a class="anchor" aria-label="anchor" href="#bbwpc-v312-2026-01-19"></a></h2>
 <div class="section level3">
@@ -206,7 +214,7 @@
 <h2 class="pkg-version" data-toc-text="1.1.1" id="bbwpc-v111-2023-08-08">BBWPC v1.1.1 2023-08-08<a class="anchor" aria-label="anchor" href="#bbwpc-v111-2023-08-08"></a></h2>
 <div class="section level3">
 <h3 id="fixed-1-1-1">Fixed<a class="anchor" aria-label="anchor" href="#fixed-1-1-1"></a></h3>
-<ul><li>cryptic error when both neither <code>B_SLOPE</code> or <code>B_SLOPE_DEGREE</code> are supplied and relying on their defaults, resolves <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/79" class="external-link">#79</a></li>
+<ul><li>cryptic error when both neither <code>B_SLOPE</code> or <code>B_SLOPE_DEGREE</code> are supplied and relying on their defaults, resolves <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/79" class="external-link">#79</a></li>
 </ul></div>
 </div>
     <div class="section level2">
@@ -544,7 +552,7 @@
 <h2 class="pkg-version" data-toc-text="0.8.2" id="bbwpc-v082">BBWPC v0.8.2<a class="anchor" aria-label="anchor" href="#bbwpc-v082"></a></h2>
 <div class="section level3">
 <h3 id="changed-0-8-2">Changed<a class="anchor" aria-label="anchor" href="#changed-0-8-2"></a></h3>
-<ul><li>Use csv as source for bbwp_measures and er_crops instead of binaries, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/41" class="external-link">#41</a></li>
+<ul><li>Use csv as source for bbwp_measures and er_crops instead of binaries, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/41" class="external-link">#41</a></li>
 <li>Cleaned up /dev folder by removing unused files</li>
 </ul></div>
 <div class="section level3">
@@ -589,9 +597,9 @@
 <h2 class="pkg-version" data-toc-text="0.6.0" id="bbwpc-v060">BBWPC v0.6.0<a class="anchor" aria-label="anchor" href="#bbwpc-v060"></a></h2>
 <div class="section level3">
 <h3 id="added-0-6-0">Added<a class="anchor" aria-label="anchor" href="#added-0-6-0"></a></h3>
-<ul><li>table <code>bbwp_measures</code> is updated with scores, rewards and applicability of ER measures, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/11" class="external-link">#11</a></li>
-<li>accumulation requirements are added to <code>er_meas_rank</code> and <code>er_meas_score</code>, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/13" class="external-link">#13</a></li>
-<li>farm measure scoring is added to <code>er_croprotation</code>, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/12" class="external-link">#12</a></li>
+<ul><li>table <code>bbwp_measures</code> is updated with scores, rewards and applicability of ER measures, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/11" class="external-link">#11</a></li>
+<li>accumulation requirements are added to <code>er_meas_rank</code> and <code>er_meas_score</code>, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/13" class="external-link">#13</a></li>
+<li>farm measure scoring is added to <code>er_croprotation</code>, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/12" class="external-link">#12</a></li>
 <li>measures input table requires a <code>bbwp_status</code> to account for accumulation effects</li>
 <li>
 <code>medalscore</code> added as argument to<code>er_farm_aim</code>, overruling input of argument <code>farmscore</code>
@@ -600,7 +608,7 @@
 <div class="section level3">
 <h3 id="changed-0-6-0">Changed<a class="anchor" aria-label="anchor" href="#changed-0-6-0"></a></h3>
 <ul><li>
-<code>B_LU_BRP</code> is removed as input for all <code>bbwp_x</code> functions, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/35" class="external-link">#35</a></li>
+<code>B_LU_BRP</code> is removed as input for all <code>bbwp_x</code> functions, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/35" class="external-link">#35</a></li>
 <li>set default BRP codes per BBWP category for waterstress indicators in <code>bbwp_field_properties</code>
 </li>
 <li>
@@ -619,11 +627,11 @@
 <h2 class="pkg-version" data-toc-text="0.5.7" id="bbwpc-v057">BBWPC v0.5.7<a class="anchor" aria-label="anchor" href="#bbwpc-v057"></a></h2>
 <div class="section level3">
 <h3 id="added-0-5-7">Added<a class="anchor" aria-label="anchor" href="#added-0-5-7"></a></h3>
-<ul><li>lower the task (opgave) for wet and peat soils for nitrate leaching, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/25" class="external-link">#25</a></li>
+<ul><li>lower the task (opgave) for wet and peat soils for nitrate leaching, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/25" class="external-link">#25</a></li>
 </ul></div>
 <div class="section level3">
 <h3 id="fixed-0-5-7">Fixed<a class="anchor" aria-label="anchor" href="#fixed-0-5-7"></a></h3>
-<ul><li>remove incorrect B_GWL_CLASS unit check in <code>bbwp_field_properties</code>, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/32" class="external-link">#32</a></li>
+<ul><li>remove incorrect B_GWL_CLASS unit check in <code>bbwp_field_properties</code>, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/32" class="external-link">#32</a></li>
 </ul></div>
 </div>
     <div class="section level2">
@@ -681,10 +689,10 @@
 <div class="section level3">
 <h3 id="added-0-5-0">Added<a class="anchor" aria-label="anchor" href="#added-0-5-0"></a></h3>
 <ul><li>internal table <code>er_aer_reward</code>, prepared in dev</li>
-<li>check and automatic update <code>B_GWL_CLASS</code> via function <code>bbwp_format_aer</code>, included in all relevant bbwp and er functions, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/18" class="external-link">#18</a></li>
+<li>check and automatic update <code>B_GWL_CLASS</code> via function <code>bbwp_format_aer</code>, included in all relevant bbwp and er functions, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/18" class="external-link">#18</a></li>
 <li>add <code>B_AER_CBS</code> as argument to all bbwp and er functions</li>
-<li>output <code>reward</code> added to <code>er_meas_score</code>, <code>er_field_scores</code> and <code>er_farm_score</code>, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/17" class="external-link">#17</a></li>
-<li>function <code>ecoregeling</code> adds <code>reward</code> as output in objects farm and field, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/17" class="external-link">#17</a></li>
+<li>output <code>reward</code> added to <code>er_meas_score</code>, <code>er_field_scores</code> and <code>er_farm_score</code>, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/17" class="external-link">#17</a></li>
+<li>function <code>ecoregeling</code> adds <code>reward</code> as output in objects farm and field, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/17" class="external-link">#17</a></li>
 <li>argument <code>B_LU_BBWP</code> is converted from string to integerish by removing <code>cat_</code> in wrapper funs <code>ecoregeling</code> and <code>bbwp</code>
 </li>
 </ul></div>
@@ -735,12 +743,12 @@
 <h2 class="pkg-version" data-toc-text="0.3.2" id="bbwpc-v032">BBWPC v0.3.2<a class="anchor" aria-label="anchor" href="#bbwpc-v032"></a></h2>
 <div class="section level3">
 <h3 id="added-0-3-2">Added<a class="anchor" aria-label="anchor" href="#added-0-3-2"></a></h3>
-<ul><li>add argument <code>B_SLOPE</code> to <code>bbwp_field_properties</code>,<code>bbwp_field_indicators</code>, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/4" class="external-link">#4</a></li>
+<ul><li>add argument <code>B_SLOPE</code> to <code>bbwp_field_properties</code>,<code>bbwp_field_indicators</code>, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/4" class="external-link">#4</a></li>
 <li>add argument <code>B_LU_BBWP</code> to <code>bbwp_meas_score</code>
 </li>
 <li>add <code>id</code> to output <code>bbwp_meas_score</code>
 </li>
-<li>add hierarchy in runoff index for N and P, issue <a href="https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/2" class="external-link">#2</a></li>
+<li>add hierarchy in runoff index for N and P, issue <a href="https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/2" class="external-link">#2</a></li>
 </ul></div>
 <div class="section level3">
 <h3 id="changed-0-3-2">Changed<a class="anchor" aria-label="anchor" href="#changed-0-3-2"></a></h3>

@@ -1,5 +1,11 @@
 # Changelog
 
+## BBWPC V3.1.3 2026-02-11
+
+### Changed
+
+- Rename organization to `nmi-agro`
+
 ## BBWPC V3.1.2 2026-01-19
 
 ### Fixed
@@ -25,11 +31,11 @@
 ### Added
 
 - function
-  [`bbwp_calc_psp()`](https://agrocares.github.io/BedrijfsBodemWaterPlanCalculator/reference/bbwp_calc_psp.md)
+  [`bbwp_calc_psp()`](https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/reference/bbwp_calc_psp.md)
   which calculates a precipitation surplus for a single year and field
   given the fields cultivation and green manure.
 - function
-  [`bbwp_wat_groundwater_recharge()`](https://agrocares.github.io/BedrijfsBodemWaterPlanCalculator/reference/bbwp_wat_groundwater_recharge.md)
+  [`bbwp_wat_groundwater_recharge()`](https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/reference/bbwp_wat_groundwater_recharge.md)
   which evaluates the soils ability to recharge groundwater.
 - A new score `S_BBWP_GW` to score groundwater(recharge)
 
@@ -46,7 +52,7 @@
 
 ### Deprecated
 
-- [`bbwp()`](https://agrocares.github.io/BedrijfsBodemWaterPlanCalculator/reference/bbwp.md)
+- [`bbwp()`](https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/reference/bbwp.md)
   no longer needs B_LU_BBWP as input, instead, one should use B_LU_BRP
   from which BBWPC infers the correct B_LU_BBWP. If B_LU_BBWP is
   entered, this is used, however, there is no check that this correctly
@@ -190,7 +196,7 @@
 
 - cryptic error when both neither `B_SLOPE` or `B_SLOPE_DEGREE` are
   supplied and relying on their defaults, resolves
-  [\#79](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/79)
+  [\#79](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/79)
 
 ## BBWPC v1.1.0 2023-07-01
 
@@ -551,7 +557,7 @@
 
 - Use csv as source for bbwp_measures and er_crops instead of binaries,
   issue
-  [\#41](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/41)
+  [\#41](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/41)
 - Cleaned up /dev folder by removing unused files
 
 ### Fixed
@@ -595,12 +601,12 @@
 
 - table `bbwp_measures` is updated with scores, rewards and
   applicability of ER measures, issue
-  [\#11](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/11)
+  [\#11](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/11)
 - accumulation requirements are added to `er_meas_rank` and
   `er_meas_score`, issue
-  [\#13](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/13)
+  [\#13](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/13)
 - farm measure scoring is added to `er_croprotation`, issue
-  [\#12](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/12)
+  [\#12](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/12)
 - measures input table requires a `bbwp_status` to account for
   accumulation effects
 - `medalscore` added as argument to`er_farm_aim`, overruling input of
@@ -609,7 +615,7 @@
 ### Changed
 
 - `B_LU_BRP` is removed as input for all `bbwp_x` functions, issue
-  [\#35](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/35)
+  [\#35](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/35)
 - set default BRP codes per BBWP category for waterstress indicators in
   `bbwp_field_properties`
 - `B_LU_BBWP`categories have been updated from 1*9 to 1*12
@@ -627,13 +633,13 @@
 
 - lower the task (opgave) for wet and peat soils for nitrate leaching,
   issue
-  [\#25](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/25)
+  [\#25](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/25)
 
 ### Fixed
 
 - remove incorrect B_GWL_CLASS unit check in `bbwp_field_properties`,
   issue
-  [\#32](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/32)
+  [\#32](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/32)
 
 ## BBWPC v0.5.6
 
@@ -686,14 +692,14 @@
 - check and automatic update `B_GWL_CLASS` via function
   `bbwp_format_aer`, included in all relevant bbwp and er functions,
   issue
-  [\#18](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/18)
+  [\#18](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/18)
 - add `B_AER_CBS` as argument to all bbwp and er functions
 - output `reward` added to `er_meas_score`, `er_field_scores` and
   `er_farm_score`, issue
-  [\#17](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/17)
+  [\#17](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/17)
 - function `ecoregeling` adds `reward` as output in objects farm and
   field, issue
-  [\#17](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/17)
+  [\#17](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/17)
 - argument `B_LU_BBWP` is converted from string to integerish by
   removing `cat_` in wrapper funs `ecoregeling` and `bbwp`
 
@@ -746,11 +752,11 @@
 
 - add argument `B_SLOPE` to
   `bbwp_field_properties`,`bbwp_field_indicators`, issue
-  [\#4](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/4)
+  [\#4](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/4)
 - add argument `B_LU_BBWP` to `bbwp_meas_score`
 - add `id` to output `bbwp_meas_score`
 - add hierarchy in runoff index for N and P, issue
-  [\#2](https://github.com/AgroCares/BedrijfsBodemWaterPlanCalculator/issues/2)
+  [\#2](https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator/issues/2)
 
 ### Changed
 
