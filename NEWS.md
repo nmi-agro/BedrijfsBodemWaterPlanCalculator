@@ -2,6 +2,8 @@
 ## Added
 * BRP 2026 codes as allowed values for B_LU_BRP
 
+## Fixed
+* Updated function arguments in `OBIC::ind_gw_recharge()` calls to no longer use deprecated arguments 
 
 # BBWPC V3.1.3 2026-02-11
 ## Changed

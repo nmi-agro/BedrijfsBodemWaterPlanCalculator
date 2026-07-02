@@ -84,10 +84,10 @@ bbwp_wat_groundwater_recharge <- function(B_LU_BRP,B_SC_WENR,B_GWL_CLASS,M_DRAIN
   dt[, value := OBIC::ind_gw_recharge(B_LU_BRP = B_LU_BRP,
                                       D_PSP = D_PSP,
                                       D_WRI_K = D_WRI_K,
-                                      I_P_SE = I_P_SE,
-                                      I_P_CO = I_P_CO,
                                       B_DRAIN = M_DRAIN,
-                                      B_GWL_CLASS = B_GWL_CLASS)]
+                                      B_GWL_CLASS = B_GWL_CLASS,
+                                      D_SE = D_SE,
+                                      B_SC_WENR = B_SC_WENR)]
   
   # extract value I_H_GWR
   value <- dt[, value]
