@@ -102,54 +102,54 @@ require(BBWPC)
       )
       
       # checks on format and output values
-      expect_equal(
-        object = names(test),
+      expect_named(
+        object = test,
         expected = c('farm','fields'))
       
-      expect_equal(
-        object = colnames(test$fields),
+      expect_named(
+        object = test$fields,
         expected = c("s_bbwp_ngw", "s_bbwp_nsw", "s_bbwp_psw", "s_bbwp_nue",
                      "s_bbwp_wb" , "s_bbwp_gw", "s_bbwp_tot", "field_id"))
       
-      expect_equal(
+      expect_identical(
         object = test$fields$s_bbwp_tot,
-        expected = c(66, 50, 26),
-        tolerance = 0.01)
+        expected = c(66, 50, 26)
+        )
       
-      expect_equal(
+      expect_identical(
         object = test$fields$s_bbwp_ngw,
-        expected = c(76, 83, 62),
-        tolerance = 0.01)
+        expected = c(72, 83, 61)
+        )
       
-      expect_equal(
+      expect_identical(
         object = test$fields$s_bbwp_nsw,
-        expected = c(98 , 19, 16),
-        tolerance = 0.01)
+        expected = c(98 , 19, 16)
+        )
       
-      expect_equal(
+      expect_identical(
         object = test$fields$s_bbwp_psw,
-        expected = c(98, 28, 9),
-        tolerance = 0.01)
+        expected = c(98, 28, 9)
+        )
       
-      expect_equal(
+      expect_identical(
         object = test$fields$s_bbwp_nue,
-        expected = c(31, 65, 30),
-        tolerance = 0.01)
+        expected = c(31, 65, 30)
+        )
       
-       expect_equal(
+       expect_identical(
          object = test$fields$s_bbwp_gw,
-         expected = c(53, 97, 17),
-         tolerance = 0.01) 
+         expected = c(53, 97, 17)
+         ) 
        
-       expect_equal(
+       expect_identical(
          object = test$fields$s_bbwp_wb,
-         expected = c(92, 90, 81),
-         tolerance = 0.01) 
+         expected = c(92, 90, 81)
+         ) 
       
-      expect_equal(
+      expect_identical(
         object = as.numeric(unlist(test$farm)),
-        expected = c(58 ,79 ,62 ,66 , 46, 91, 72),
-        tolerance = 0.01)
+        expected = c(58, 77, 62, 66, 46, 91, 72)
+        )
     })
 
 
@@ -192,8 +192,8 @@ require(BBWPC)
       )
       # run tests on format and output values
       
-      expect_equal(
-        object = names(test$measures[[1]]),
+      expect_named(
+        object = test$measures[[1]],
         expected = c("top_bbwp_tot","top_bbwp_ngw","top_bbwp_nsw","top_bbwp_psw",
                      "top_bbwp_wb", "top_bbwp_gw","top_bbwp_nue"))
       
@@ -254,15 +254,15 @@ require(BBWPC)
     
     
     # run tests on format and output values
-    expect_equal(
+    expect_identical(
       object = test$fields$s_bbwp_tot,
-      expected = c(83, 50, 54),
-      tolerance = 0.01)
+      expected = c(83, 50, 54)
+      )
     
-    expect_equal(
+    expect_identical(
       object = as.numeric(unlist(test$farm)),
-      expected = c(68, 86 ,63 ,67 ,72, 92, 75),
-      tolerance = 0.01)
+      expected = c(68, 85 ,63 ,67 ,72, 92, 75)
+      )
   })
 
   
@@ -306,24 +306,24 @@ require(BBWPC)
                    B_LU_BRP = c(265, 2014, 265))
     )
     
-    expect_equal(
-      object = names(test),
+    expect_named(
+      object = test,
       expected = c('farm','fields'))
     
-    expect_equal(
-      object = colnames(test$fields),
+    expect_named(
+      object = test$fields,
       expected =c("s_bbwp_ngw", "s_bbwp_nsw", "s_bbwp_psw", "s_bbwp_nue",
                   "s_bbwp_wb" , "s_bbwp_gw","s_bbwp_tot", "field_id"))
     
-    expect_equal(
+    expect_identical(
       object = test$fields$s_bbwp_tot,
-      expected = c(66 , 50 , 26),
-      tolerance = 0.01)
+      expected = c(66 , 50 , 26)
+      )
     
-    expect_equal(
+    expect_identical(
       object = as.numeric(unlist(test$farm)),
-      expected = c(58 ,79 ,62 ,66 , 46, 91, 72),
-      tolerance = 0.01)
+      expected = c(58 ,77 ,62 ,66 , 46, 91, 72)
+      )
   })
   
   
@@ -368,7 +368,7 @@ require(BBWPC)
   test_that("check bbwp with high PSW loss risk", {
     expect_equal(
       object = as.numeric(unlist(test$farm)),
-      expected = c(29 , 87, 8, 6, 32, 91, 90),
+      expected = c(29 , 86, 8, 6, 32, 91, 90),
       tolerance = 0.01)
   })
   
@@ -412,10 +412,9 @@ require(BBWPC)
   )
   
   test_that("check bbwp with high nitrate leaching risk and no measures", {
-    expect_equal(
+    expect_identical(
       object = as.numeric(unlist(test$farm)),
-      expected = c(58, 27, 55, 49, 82, 88, 91),
-      tolerance = 0.01)
+      expected = c(56, 24, 55, 49, 82, 88, 91))
   })
   
   # run example with low regional targets for region
@@ -456,10 +455,10 @@ require(BBWPC)
   )
   
   test_that("check bbwp with low regional targets", {
-    expect_equal(
+    expect_identical(
       object = as.numeric(unlist(test$farm)),
-      expected = c(57, 87, 49, 43, 32, 84, 90),
-      tolerance = 0.01)
+      expected = c(57, 86, 49, 43, 32, 84, 90)
+      )
   })
   
   test_that('B_SLOPE and B_SLOPE_DEGREE can both be used but at leatst one needs to be given', {

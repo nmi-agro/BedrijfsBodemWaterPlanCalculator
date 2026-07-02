@@ -22,7 +22,7 @@ Depends:
 Imports: 
     checkmate,
     data.table,
-    OBIC (>= 4.0.0)
+    OBIC (>= 4.3.0)
 Remotes: nmi-agro/BLN
 License: GPL-3 | file LICENSE
 URL: https://github.com/nmi-agro/BedrijfsBodemWaterPlanCalculator, https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/
