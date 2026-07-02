@@ -52,7 +52,7 @@ test <- bbwp_field_scores(B_SOILTYPE_AGR = c('dekzand', 'loess', 'rivierklei'),
 
 
 test_that("check bbwp_field_scores", {
-  expect_equal(
+  expect_identical(
     object = test,
     expected = data.table(
       S_BBWP_NGW = c(98,67,4),

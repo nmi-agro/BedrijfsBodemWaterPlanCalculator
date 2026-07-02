@@ -1,5 +1,5 @@
 test_that("check bbwp_farm_score", {
-  expect_equal(
+  expect_identical(
     bbwp_farm_score(
       S_BBWP_TOT = seq(0, 10, 2.5),
       S_BBWP_NGW = seq(0, 10, 2.5),
@@ -18,12 +18,11 @@ test_that("check bbwp_farm_score", {
       S_BBWP_NUE = 5,
       S_BBWP_WB = 5,
       S_BBWP_GW = 5
-    ),
-    tolerance = 0.01)
+    ))
 })
 
 test_that("check bbwp_farm_score", {
-  expect_equal(
+  expect_identical(
     bbwp_farm_score(
       S_BBWP_TOT = seq(0, 100, 25),
       S_BBWP_NGW = seq(0, 85, length.out = 5),
@@ -42,6 +41,5 @@ test_that("check bbwp_farm_score", {
       S_BBWP_NUE = 1,
       S_BBWP_WB = 67,
       S_BBWP_GW = 67
-    ),
-    tolerance = 0.01)
+    ))
 })

@@ -48,17 +48,17 @@ test <- er_meas_rank(B_SOILTYPE_AGR = c('dekzand', 'loess', 'rivierklei','veen')
                     )
 
 test_that("check er_meas_rank", {
-  expect_equal(
-    object = dim(test),
-    expected = c(20,8),
-    tolerance = 0.01)
+  expect_shape(
+    object = test,
+    dim = c(20,8)
+    )
 })
 
 test_that("check er_meas_rank", {
-  expect_equal(
-    object = colnames(test),
-    expected = c('id',"top_er_tot","top_er_soil","top_er_water","top_er_climate","top_er_biodiversity","top_er_landscape","top_er_reward"),
-    tolerance = 0.01)
+  expect_named(
+    object = test,
+    expected = c('id',"top_er_tot","top_er_soil","top_er_water","top_er_climate","top_er_biodiversity","top_er_landscape","top_er_reward")
+    )
 })
 
 test_that("check er_meas_rank", {
@@ -101,24 +101,23 @@ test <- er_meas_rank(B_SOILTYPE_AGR = c('dekzand', 'loess', 'rivierklei','veen')
 )
 
 test_that("check er_meas_rank", {
-  expect_equal(
-    object = dim(test),
-    expected = c(20,8),
-    tolerance = 0.01)
+  expect_shape(
+    object = test,
+    dim = c(20,8)
+    )
 })
 
 test_that("check er_meas_rank", {
-  expect_equal(
-    object = colnames(test),
-    expected = c('id',"top_er_tot","top_er_soil","top_er_water","top_er_climate","top_er_biodiversity","top_er_landscape","top_er_reward"),
-    tolerance = 0.01)
+  expect_named(
+    object = test,
+    expected = c('id',"top_er_tot","top_er_soil","top_er_water","top_er_climate","top_er_biodiversity","top_er_landscape","top_er_reward")
+    )
 })
 
 test_that("check er_meas_rank", {
   expect_equal(
     object = test$top_er_tot[c(1,4,8,15)],
-    expected = c("B132", "B171", "B155", "B145"),
-    tolerance = 0.01)
+    expected = c("B132", "B171", "B155", "B145"))
 })
 
 
