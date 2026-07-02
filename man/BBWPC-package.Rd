@@ -22,6 +22,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Gerard Ros \email{gerard.ros@nmi-agro.nl}
   \item Sven Verweij \email{sven.verweij@nmi-agro.nl}
 }
 
