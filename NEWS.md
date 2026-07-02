@@ -1,3 +1,8 @@
+# BBWPC V3.1.4 2026-07-02
+## Added
+* BRP 2026 codes as allowed values for B_LU_BRP
+
+
 # BBWPC V3.1.3 2026-02-11
 ## Changed
 * Rename organization to `nmi-agro`
