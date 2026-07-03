@@ -30,6 +30,8 @@ Useful links:
 
 Authors:
 
+- Gerard Ros <gerard.ros@nmi-agro.nl>
+
 - Sven Verweij <sven.verweij@nmi-agro.nl>
 
 Other contributors:

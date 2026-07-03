@@ -11,7 +11,7 @@ er_crops
 
 ## Format
 
-An object of class `data.table` (inherits from `data.frame`) with 525
+An object of class `data.table` (inherits from `data.frame`) with 532
 rows and 6 columns.
 
 ## Details
