@@ -21,4 +21,4 @@ library("BBWPC")
 ## Documentation
 Documentation of the R functions in the `BBWPC` package can be found [here](https://nmi-agro.github.io/BedrijfsBodemWaterPlanCalculator/)
 
-![Logo of NMI](https://media.licdn.com/dms/image/C560BAQEYGcm4HjNnxA/company-logo_200_200/0?e=2159024400&v=beta&t=u40rJ7bixPWB2SAqaj3KCKzJRoKcqf0wUXCdmsTDQvw)
+![Logo of NMI](https://github.com/user-attachments/assets/fc56e7ac-e72a-44a3-a83a-c0b38a3001eb)

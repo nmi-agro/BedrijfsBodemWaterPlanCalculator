@@ -1,3 +1,14 @@
+# BBWPC V3.1.4 2026-07-02 🥧
+## Added
+* BRP 2026 codes as allowed values for B_LU_BRP
+
+## Fixed
+* Updated function arguments in `OBIC::ind_gw_recharge()` calls to no longer use deprecated arguments
+* Updated test expectations for nitrogen leaching to groundwater to match improvements in OBIC's nleach_table from OBIC v4.2.2
+
+## Changed
+* In unit tests, use more specific expectations
+
 # BBWPC V3.1.3 2026-02-11
 ## Changed
 * Rename organization to `nmi-agro`

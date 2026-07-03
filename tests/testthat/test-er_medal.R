@@ -27,8 +27,7 @@
 test_that("check er_medal", {
   expect_equal(
     test,
-    expected = c('silver',rep('none',3)),
-    tolerance = 0.01)
+    expected = c('silver',rep('none',3)))
 })
 
 # run test example for farm estimate
@@ -47,8 +46,7 @@ test <- er_medal(B_SOILTYPE_AGR = c('dekzand', 'loess', 'rivierklei','veen'),
 test_that("check er_medal", {
   expect_equal(
     test,
-    expected = c('bronze'),
-    tolerance = 0.01)
+    expected = c('bronze'))
 })
 
 

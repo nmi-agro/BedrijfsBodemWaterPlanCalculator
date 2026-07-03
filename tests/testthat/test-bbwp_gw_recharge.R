@@ -37,8 +37,8 @@ test_that("bbwp_wat_groundwater_recharge works", {
 })
 
 test_that("M_DRAIN affect GWL class IIIb and IV but not others", {
-  expect_false(
-    all(bbwp_wat_groundwater_recharge(
+  expect_all_false(
+    bbwp_wat_groundwater_recharge(
       B_LU_BRP = c(233,259,2014,308),
       B_SC_WENR = rep(1,4),
       B_GWL_CLASS = rep('IV',4),
@@ -59,10 +59,10 @@ test_that("M_DRAIN affect GWL class IIIb and IV but not others", {
       A_SOM_LOI = rep(5, 4),
       M_GREEN = rep(FALSE,4)
     )
-  ))
+  )
 
-  expect_false(
-    all(bbwp_wat_groundwater_recharge(
+  expect_all_false(
+    bbwp_wat_groundwater_recharge(
       B_LU_BRP = c(233,259,2014,308),
       B_SC_WENR = rep(11,4),
       B_GWL_CLASS = rep('IIIb',4),
@@ -83,7 +83,7 @@ test_that("M_DRAIN affect GWL class IIIb and IV but not others", {
       A_SOM_LOI = c(2,3,5,8),
       M_GREEN = rep(FALSE,4)
     )
-  ))
+  )
   
   expect_equal(
     object = bbwp_wat_groundwater_recharge(

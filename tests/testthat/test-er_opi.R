@@ -24,24 +24,21 @@ test <- er_opi(B_SOILTYPE_AGR = c('dekzand', 'loess', 'rivierklei','veen','dekza
                )
 
 test_that("check er_opi", {
-  expect_equal(
-    names(test),
-    expected = c("dt.field.ind.score" ,"dt.farm.ind.score" , "dt.farm.score","dt.farm.ind.opi"),
-    tolerance = 0.01)
+  expect_named(
+    test,
+    expected = c("dt.field.ind.score" ,"dt.farm.ind.score" , "dt.farm.score","dt.farm.ind.opi"))
 })
 
 test_that("check er_opi", {
-  expect_equal(
-    names(test$dt.field.ind.score),
-    expected = c('field_id','s_er_soil','s_er_water','s_er_climate','s_er_biodiversity','s_er_landscape','s_er_costs','s_er_farm_tot','s_er_tot'),
-    tolerance = 0.01)
+  expect_named(
+    test$dt.field.ind.score,
+    expected = c('field_id','s_er_soil','s_er_water','s_er_climate','s_er_biodiversity','s_er_landscape','s_er_costs','s_er_farm_tot','s_er_tot'),)
 })
 
 test_that("check er_opi", {
-  expect_equal(
-    names(test$dt.farm.ind.score),
-    expected = c('S_ER_SOIL' ,'S_ER_WATER', 'S_ER_CLIMATE', 'S_ER_BIODIVERSITY' ,'S_ER_LANDSCAPE', 'S_ER_COSTS' ,'S_ER_FARM_TOT'),
-    tolerance = 0.01)
+  expect_named(
+    test$dt.farm.ind.score,
+    expected = c('S_ER_SOIL' ,'S_ER_WATER', 'S_ER_CLIMATE', 'S_ER_BIODIVERSITY' ,'S_ER_LANDSCAPE', 'S_ER_COSTS' ,'S_ER_FARM_TOT'))
 })
 
 test_that("check er_opi", {

@@ -39,21 +39,18 @@ test_that("Test er_croprotation works without measures", {
                           sector = 'dairy'
   )
   
-  expect_equal(
-    object = dim(test),
-    expected = c(1,8),
-    tolerance = 0.01)
+  expect_shape(
+    object = test,
+    dim = c(1,8))
   
-  expect_equal(
-    object = colnames(test),
-    expected = c('farmid','biodiversity','climate','landscape','soil','water','total','S_ER_REWARD'),
-    tolerance = 0.01)
+  expect_named(
+    object = test,
+    expected = c('farmid','biodiversity','climate','landscape','soil','water','total','S_ER_REWARD')
+    )
   
-  expect_equal(
+  expect_identical(
     object = as.numeric(test),
-    expected = c(1,0,0,0,0,0,0,0),
-    tolerance = 0.1,
-    ignore_attr = TRUE)
+    expected = c(1,0,0,0,0,0,0,0))
 })
 
 test_that("Test er_croprotation works with field and farm level measures", {
@@ -78,15 +75,15 @@ test_that("Test er_croprotation works with field and farm level measures", {
                           sector = 'dairy'
   )
   
-  expect_equal(
-    object = dim(test),
-    expected = c(1,8),
-    tolerance = 0.01)
+  expect_shape(
+    object = test,
+    dim = c(1,8)
+    )
   
-  expect_equal(
-    object = colnames(test),
-    expected = c('farmid','biodiversity','climate','landscape','soil','water','total','S_ER_REWARD'),
-    tolerance = 0.01)
+  expect_named(
+    object = test,
+    expected = c('farmid','biodiversity','climate','landscape','soil','water','total','S_ER_REWARD')
+    )
   
   expect_equal(
     object = as.numeric(test),
@@ -120,7 +117,7 @@ test_that("Test er_croprotation if only field measures are taken and insufficien
                           sector = 'dairy'
   )
   
-  expect_equal(
+  expect_identical(
     object = as.numeric(test),
     expected = c(1,0,0,0,0,0,0,0),
     tolerance = 0.1,

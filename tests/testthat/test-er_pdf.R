@@ -17,17 +17,16 @@
                           pdf = TRUE)
   
   test_that("check er_croprotation", {
-    expect_equal(
-      object = dim(test$pdf),
-      expected = c(0,9),
-      tolerance = 0.01)
+    expect_shape(
+      object = test$pdf,
+      dim = c(0,9)
+      )
   })
   
   test_that("check er_croprotation", {
-    expect_equal(
-      object = colnames(test$pdf),
-      expected = c("level","summary","B_AREA_tot","climate","soil","water","landscape" ,"biodiversity" ,"total"),
-      tolerance = 0.01)
+    expect_named(
+      object = test$pdf,
+      expected = c("level","summary","B_AREA_tot","climate","soil","water","landscape" ,"biodiversity" ,"total"))
   })
   
   # get internal table with measures
@@ -54,17 +53,16 @@
   
   
   test_that("check er_croprotation", {
-    expect_equal(
-      object = dim(test$pdf),
-      expected = c(2,9),
-      tolerance = 0.01)
+    expect_shape(
+      object = test$pdf,
+      dim = c(2,9)
+      )
   })
   
   test_that("check er_croprotation", {
-    expect_equal(
-      object = colnames(test$pdf),
-      expected = c("level","summary","B_AREA_tot","climate","soil","water","landscape" ,"biodiversity" ,"total"),
-      tolerance = 0.01)
+    expect_named(
+      object = test$pdf,
+      expected = c("level","summary","B_AREA_tot","climate","soil","water","landscape" ,"biodiversity" ,"total"))
   })
     
   test_that("check er_croprotation", {

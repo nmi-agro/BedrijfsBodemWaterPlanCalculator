@@ -522,5 +522,12 @@
 7131,"rogge, groenbemesting, vanggewas","vanggewas",TRUE,TRUE,TRUE
 7134,"riet in water, anders dan een subsidiabele sloot","natuur",TRUE,FALSE,FALSE
 7135,"riet in een subsidiabele sloot","natuur",TRUE,FALSE,FALSE
+7136,"anna paulowna","boomfruitteelt",FALSE,FALSE,TRUE
 7137,"bonen, overig","eiwitgewas",FALSE,TRUE,TRUE
 7138,"palmkool","groenten",TRUE,TRUE,TRUE
+7139,"notenbomen, hazelnoot","boomfruitteelt",FALSE,TRUE,TRUE
+7193,"notenbomen, walnoot","boomfruitteelt",FALSE,TRUE,TRUE
+7194,"notenbomen, overig","boomfruitteelt",FALSE,TRUE,TRUE
+7195,"bosui","groenten",TRUE,TRUE,TRUE
+7196,"lente-ui","groenten",TRUE,TRUE,TRUE
+7197,"bamboe","boomfruitteelt",FALSE,TRUE,TRUE

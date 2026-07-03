@@ -76,7 +76,7 @@ use_data(bbwp_measures, overwrite = TRUE)
   er_crops <- pandex::b_lu_brp[,.(B_LU_BRP, B_LU_NAME, B_LU_BBWP, B_LU_ARABLE_ER, B_LU_PRODUCTIVE_ER, B_LU_CULTIVATED_ER)]
   
   # save measures as bbwp table
-  use_data(er_crops, overwrite = TRUE)
+  usethis::use_data(er_crops, overwrite = TRUE)
   fwrite(er_crops, 'dev/er_crops.csv', quote = TRUE)
   
 # -- prepare correction factors for financial reward per Agricultural Economic Region for Ecoregelingen ----
