@@ -199,7 +199,7 @@ require(BBWPC)
       
       expect_equal(
         object = test$measures[[1]]$top_bbwp_tot,
-        expected = c("G11aBWP4","G6BWP6", "BWP13", "G36", "B132"))
+        expected = c("BWP13_3", "G11aBWP4","G6BWP6","G36", "B132"))
     })
 
 

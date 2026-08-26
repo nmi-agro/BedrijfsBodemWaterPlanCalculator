@@ -8,7 +8,7 @@ test <- bbwp_check_meas(dt = NULL,eco = FALSE, score = FALSE)
 test_that("check bbwp_check_meas", {
   expect_equal(
     object = dim(test),
-    expected = c(169,67),
+    expected = c(175,67),
     tolerance = 0.01)
 })
 
