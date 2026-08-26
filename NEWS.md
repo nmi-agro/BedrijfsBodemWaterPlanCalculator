@@ -1,3 +1,9 @@
+# BBWPC V3.1.5
+## changed
+* measures `BWP13`, `G9BWP8`, `G6BWP4` and `G6BWP3` are split into several intensities with format `originalcode_1/2/3`
+* Updated effect_gw for all hydrological measures
+* Updated description and summary for all hydrological measures
+
 # BBWPC V3.1.4 2026-07-02 🥧
 ## Added
 * BRP 2026 codes as allowed values for B_LU_BRP
