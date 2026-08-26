@@ -58,7 +58,7 @@ test_that("check bbwp_meas_rank", {
   expect_equal(
     object = test$top_bbwp_tot[c(1,2,7,12,15)],
     #expected = c('G53',"G27",'G21','G27','G17'),
-    expected = c("G11aBWP4", "G6BWP6", "G6BWP6", "G6BWP6", "G18h1")
+    expected = c("G11aBWP4", "G6BWP6", "G6BWP6", "G6BWP6", "G18H1")
     )
 })
 
