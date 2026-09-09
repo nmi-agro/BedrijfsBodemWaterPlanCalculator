@@ -5,7 +5,7 @@
 \alias{bbwp_measures}
 \title{Agronomic measures that can be applied}
 \format{
-An object of class \code{data.frame} with 175 rows and 72 columns.
+An object of class \code{data.table} (inherits from \code{data.frame}) with 175 rows and 72 columns.
 }
 \usage{
 bbwp_measures
