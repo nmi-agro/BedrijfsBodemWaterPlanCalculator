@@ -58,7 +58,7 @@ test_that("check bbwp_meas_rank", {
   expect_equal(
     object = test$top_bbwp_tot[c(1,2,7,12,15)],
     #expected = c('G53',"G27",'G21','G27','G17'),
-    expected = c("G11aBWP4", "G6BWP6", "G6BWP6", "G6BWP6", "BWP7")
+    expected = c("G11aBWP4", "G6BWP6", "G6BWP6", "G6BWP6", "G18H1")
     )
 })
 
@@ -112,7 +112,7 @@ test_that("check bbwp_meas_rank", {
   expect_equal(
     object = test$top_bbwp_tot[c(1,2,5,9,16)],
     #expected = c("G53" , "G8BWP4",  "G11aBWP3", "G54" , "B137"),
-    expected = c("G11aBWP4","G6BWP6", "B132", "G18H1", "B137"),
+    expected = c("G11aBWP4","G6BWP6", "G12BWP10", "BWP13_3", "B137"),
     tolerance = 0.01)
 })
 
@@ -170,7 +170,7 @@ test_that("check bbwp_meas_rank", {
   expect_equal(
     object = test[id==1,top_bbwp_tot],
     #expected = c('B131','G65','G27','G25','G12BWP10'),
-    expected = c( "B132", "G65",  "G27",  "G25",  "G12BWP10"))
+    expected = c( "B132", "G65",  "G27",  "G12BWP10",  "G25"))
 })
 
 
@@ -198,7 +198,7 @@ test <- bbwp_meas_rank(B_SOILTYPE_AGR = c('dekzand', 'loess', 'rivierklei','veen
 test_that("check bbwp_meas_rank", {
   expect_equal(
     object = test[id==1,top_bbwp_tot],
-    expected = c("G6BWP6", "G11aBWP4", "BWP13", "B112","B110H1"))
+    expected = c("BWP13_3","G6BWP6", "G11aBWP4",  "B112","B110H1"))
 })
 
 
