@@ -204,7 +204,7 @@ require(BBWPC)
 
 
 
-# run example 3 without any measures taken
+# run example 3 with measures taken
   test_that("check bbwp with measures", {
     # get internal table with measures
     dt.measures <- as.data.table(BBWPC::bbwp_measures)
