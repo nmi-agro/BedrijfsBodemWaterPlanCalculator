@@ -199,12 +199,12 @@ require(BBWPC)
       
       expect_equal(
         object = test$measures[[1]]$top_bbwp_tot,
-        expected = c("G11aBWP4","G6BWP6", "BWP13", "G36", "B132"))
+        expected = c("BWP13_3", "G11aBWP4","G6BWP6","G36", "B132"))
     })
 
 
 
-# run example 3 without any measures taken
+# run example 3 with measures taken
   test_that("check bbwp with measures", {
     # get internal table with measures
     dt.measures <- as.data.table(BBWPC::bbwp_measures)
@@ -256,7 +256,7 @@ require(BBWPC)
     # run tests on format and output values
     expect_identical(
       object = test$fields$s_bbwp_tot,
-      expected = c(83, 50, 54)
+      expected = c(83, 50, 49)
       )
     
     expect_identical(

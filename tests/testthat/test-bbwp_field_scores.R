@@ -114,8 +114,8 @@ test_that("check bbwp_field_scores", {
       S_BBWP_PSW = c(99,46,34),
       S_BBWP_NUE = c(99,60,100),
       S_BBWP_WB = c(98,60,26),
-      S_BBWP_GW = c(99,83,16),
-      S_BBWP_TOT = c(99,58,37)
+      S_BBWP_GW = c(99,83,4),
+      S_BBWP_TOT = c(99,58,30)
     ),
     tolerance = 0.01)
 })

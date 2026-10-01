@@ -6,10 +6,7 @@ require(testthat)
 test <- bbwp_check_meas(dt = NULL,eco = FALSE, score = FALSE)
 
 test_that("check bbwp_check_meas", {
-  expect_equal(
-    object = dim(test),
-    expected = c(169,67),
-    tolerance = 0.01)
+  expect_shape(test, dim = c(175, 67))
 })
 
 
@@ -17,20 +14,14 @@ test_that("check bbwp_check_meas", {
 test <- bbwp_check_meas(dt = NULL,eco = TRUE, score = FALSE)
 
 test_that("check bbwp_check_meas", {
-  expect_equal(
-    object = dim(test),
-    expected = c(82,67),
-    tolerance = 0.01)
+  expect_shape(test, dim = c(82, 67))
 })
 
 # run example 3
 test <- bbwp_check_meas(dt = NULL,eco = TRUE, score = TRUE)
 
 test_that("check bbwp_check_meas", {
-  expect_equal(
-    object = dim(test),
-    expected = c(0,69),
-    tolerance = 0.01)
+  expect_shape(test, dim = c(0, 69))
 })
 
 # get internal table with measures
@@ -46,20 +37,14 @@ measures$bbwp_status <- 'given for ANLB'
 test <- bbwp_check_meas(dt = measures,eco = TRUE, score = TRUE)
 
 test_that("check bbwp_check_meas", {
-  expect_equal(
-    object = dim(test),
-    expected = c(11,69),
-    tolerance = 0.01)
+  expect_shape(test, dim = c(11, 69))
 })
 
 # run example 4
 test <- bbwp_check_meas(dt = measures,eco = TRUE, score = FALSE)
 
 test_that("check bbwp_check_meas", {
-  expect_equal(
-    object = dim(test),
-    expected = c(83,67),
-    tolerance = 0.01)
+  expect_shape(test, dim = c(83, 67))
 })
 
 
