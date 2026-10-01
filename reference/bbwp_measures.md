@@ -11,7 +11,7 @@ bbwp_measures
 
 ## Format
 
-An object of class `data.table` (inherits from `data.frame`) with 169
+An object of class `data.table` (inherits from `data.frame`) with 175
 rows and 72 columns.
 
 ## Details
