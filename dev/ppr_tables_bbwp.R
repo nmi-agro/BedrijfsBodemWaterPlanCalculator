@@ -6,9 +6,8 @@ require(data.table);library(usethis)
 # -- prepare measures table -----
 
 # load measures table 
-# changes of measure tables were made in Github Repo NMI-DATA_scripts/bbwp
-# Resulting tables are stored in NMI-DATA\maatregelen\bbwp\data
-# and the newest one is copied to data-raw of this Repo
+# changes of measure tables were made in another Github Repo and saved elsewhere.
+# the newest CSV is copied to data-raw of this Repo
 bbwp_measures <- fread('data-raw/bbwp_measures.csv', encoding = 'UTF-8')
 
 # # write bbwp_measures as a csv
