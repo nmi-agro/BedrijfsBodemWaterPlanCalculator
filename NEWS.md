@@ -1,8 +1,19 @@
-# BBWPC V3.1.5, 26/08/2026
+# BBWPC V3.1.6, 2026-10-02
+
+## Fixed
+* effect_costs of some measures being too high (>2). All effect_costs are now between 0 and 2.
+
+## changed
+* Column effect_costs in bbwp_measures is now of type numeric instead of integer.
+* measure 'G12BWP13' was removed, as it is identical to G12BWP10
+* Updated description, summary, and category for some hydrological measures
+
+# BBWPC V3.1.5, 2026-08-26
 ## changed
 * measures `BWP13`, `G9BWP8`, `G6BWP4` and `G6BWP3` are split into several intensities with format `originalcode_1/2/3`
 * Updated effect_gw for all hydrological measures
 * Updated description and summary for all hydrological measures
+* measure 'G6BWP5' was removed, as it is identical to B112
 
 # BBWPC V3.1.4 2026-07-02 🥧
 ## Added

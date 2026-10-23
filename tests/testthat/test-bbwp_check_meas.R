@@ -6,7 +6,7 @@ require(testthat)
 test <- bbwp_check_meas(dt = NULL,eco = FALSE, score = FALSE)
 
 test_that("check bbwp_check_meas", {
-  expect_shape(test, dim = c(175, 67))
+  expect_shape(test, dim = c(174, 67))
 })
 
 
