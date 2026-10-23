@@ -5,6 +5,8 @@
 
 ## changed
 * Column effect_costs in bbwp_measures is now of type numeric instead of integer.
+* measure 'G12BWP13' was removed, as it is identical to G12BWP10
+* Updated description, summary, and category for some hydrological measures
 
 # BBWPC V3.1.5, 2026-08-26
 ## changed
