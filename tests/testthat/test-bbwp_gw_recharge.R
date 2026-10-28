@@ -13,7 +13,7 @@ test_that("bbwp_wat_groundwater_recharge works", {
       A_SOM_LOI = c(2,3,5,8),
       M_GREEN = rep(FALSE,4)
     ),
-    expected = c(0.68,0.71,0.78,0.79),
+    expected = c(0.49,0.51,0.57,0.59),
     tolerance = 0.1
   )
   
@@ -30,13 +30,13 @@ test_that("bbwp_wat_groundwater_recharge works", {
       A_SOM_LOI = c(2,3,15,18),
       M_GREEN = rep(FALSE,4)
     ),
-    expected = c(0.69,0.71,0.80,0.80),
+    expected = c(0.50,0.51,0.59,0.60),
     tolerance = 0.1
   )
   
 })
 
-test_that("M_DRAIN affect GWL class IIIb and IV but not others", {
+test_that("M_DRAIN affects GWL classes with GHG <= 80 cm but not others", {
   expect_all_false(
     bbwp_wat_groundwater_recharge(
       B_LU_BRP = c(233,259,2014,308),
@@ -85,33 +85,57 @@ test_that("M_DRAIN affect GWL class IIIb and IV but not others", {
     )
   )
   
-  expect_equal(
-    object = bbwp_wat_groundwater_recharge(
-      B_LU_BRP = rep(233, 11),
-      B_SC_WENR = rep(11, 11),
-      B_GWL_CLASS = c(paste0('', c('I', 'II', 'IIb', 'III', 'IIIa','V', 'Va', 'Vb',
-                                     'VI', 'VII', 'VIII'))),
-      M_DRAIN = rep(FALSE, 11),
-      A_CLAY_MI = rep(20, 11),
-      A_SAND_MI = rep(15, 11),
-      A_SILT_MI = rep(10, 11),
-      A_SOM_LOI = rep(5, 11),
-      M_GREEN = rep(FALSE, 11)
-    ),
-    expected = bbwp_wat_groundwater_recharge(
-      B_LU_BRP = rep(233, 11),
-      B_SC_WENR = rep(11, 11),
-      B_GWL_CLASS = c(paste0('', c('I', 'II', 'IIb', 'III', 'IIIa','V', 'Va', 'Vb',
-                                     'VI', 'VII', 'VIII'))),
-      M_DRAIN = rep(TRUE, 11),
-      A_CLAY_MI = rep(20, 11),
-      A_SAND_MI = rep(15, 11),
-      A_SILT_MI = rep(10, 11),
-      A_SOM_LOI = rep(5, 11),
-      M_GREEN = rep(FALSE, 11)
+  # GWL classes with estimated GHG <= 80 cm are affected by drainage
+  expect_all_false(
+    bbwp_wat_groundwater_recharge(
+      B_LU_BRP = rep(233, 9),
+      B_SC_WENR = rep(11, 9),
+      B_GWL_CLASS = c('I', 'II', 'IIb', 'III', 'IIIa','V', 'Va', 'Vb', 'VI'),
+      M_DRAIN = rep(FALSE, 9),
+      A_CLAY_MI = rep(20, 9),
+      A_SAND_MI = rep(15, 9),
+      A_SILT_MI = rep(10, 9),
+      A_SOM_LOI = rep(5, 9),
+      M_GREEN = rep(FALSE, 9)
+    ) == bbwp_wat_groundwater_recharge(
+      B_LU_BRP = rep(233, 9),
+      B_SC_WENR = rep(11, 9),
+      B_GWL_CLASS = c('I', 'II', 'IIb', 'III', 'IIIa','V', 'Va', 'Vb', 'VI'),
+      M_DRAIN = rep(TRUE, 9),
+      A_CLAY_MI = rep(20, 9),
+      A_SAND_MI = rep(15, 9),
+      A_SILT_MI = rep(10, 9),
+      A_SOM_LOI = rep(5, 9),
+      M_GREEN = rep(FALSE, 9)
     )
   )
-  
+
+  # GWL classes with estimated GHG > 80 cm are not affected by drainage
+  expect_equal(
+    object = bbwp_wat_groundwater_recharge(
+      B_LU_BRP = rep(233, 2),
+      B_SC_WENR = rep(11, 2),
+      B_GWL_CLASS = c('VII', 'VIII'),
+      M_DRAIN = rep(FALSE, 2),
+      A_CLAY_MI = rep(20, 2),
+      A_SAND_MI = rep(15, 2),
+      A_SILT_MI = rep(10, 2),
+      A_SOM_LOI = rep(5, 2),
+      M_GREEN = rep(FALSE, 2)
+    ),
+    expected = bbwp_wat_groundwater_recharge(
+      B_LU_BRP = rep(233, 2),
+      B_SC_WENR = rep(11, 2),
+      B_GWL_CLASS = c('VII', 'VIII'),
+      M_DRAIN = rep(TRUE, 2),
+      A_CLAY_MI = rep(20, 2),
+      A_SAND_MI = rep(15, 2),
+      A_SILT_MI = rep(10, 2),
+      A_SOM_LOI = rep(5, 2),
+      M_GREEN = rep(FALSE, 2)
+    )
+  )
+
   # check that functions that wrap bbwp_wat_groundwater_recharge keep the b suffix intact
   LSW = data.table(B_LSW_ID = 1:2,
                    B_SOM_LOI = 8.65,
