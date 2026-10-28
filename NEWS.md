@@ -1,3 +1,10 @@
+# BBWPC V3.1.6, 2026-10-28
+## Changed
+* Minimum required version of OBIC is now 4.4.0. This changes the groundwater recharge indicator and thereby `S_BBWP_GW` and the total BBWP score:
+  * the score for grassland is higher, while the score for arable crops is slightly lower. This is due to the changes in evaluation function for precipitation surplus.
+  * the effect of drainage (`M_DRAIN`) now depends on the estimated GHG (≤ 80 cm) instead of only GWL classes IIIb and IV, so drainage reduces groundwater recharge for more GWL classes
+* Updated test expectations for groundwater recharge and BBWP scores accordingly
+
 # BBWPC V3.1.5, 26/08/2026
 ## changed
 * measures `BWP13`, `G9BWP8`, `G6BWP4` and `G6BWP3` are split into several intensities with format `originalcode_1/2/3`
